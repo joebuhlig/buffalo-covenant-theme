@@ -138,3 +138,19 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+function bcc_customize_register( $wp_customize ) {
+   $wp_customize->add_section( 'header_video_section_name' , array(
+        'title'    => __( 'Header Video', 'buffalo-covenant-theme' ),
+        'priority' => 50
+    ) );   
+
+    $wp_customize->add_setting( 'header_video_new_setting_name');
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_video', array(
+        'label'    => __( 'Header Video', 'buffalo-covenant-theme' ),
+        'section'  => 'header_video_section_name',
+        'settings' => 'header_video_new_setting_name',
+    ) ) );
+}
+add_action( 'customize_register', 'bcc_customize_register' );
