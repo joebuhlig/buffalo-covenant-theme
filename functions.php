@@ -87,8 +87,26 @@ add_action( 'after_setup_theme', 'buffalo_covenant_theme_content_width', 0 );
  */
 function buffalo_covenant_theme_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'buffalo-covenant-theme' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Home Title', 'buffalo-covenant-theme' ),
+		'id'            => 'home-title-sidebar',
+		'description'   => esc_html__( 'Add widgets here.', 'buffalo-covenant-theme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Featured Events', 'buffalo-covenant-theme' ),
+		'id'            => 'home-featured-sidebar',
+		'description'   => esc_html__( 'Add widgets here.', 'buffalo-covenant-theme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'buffalo-covenant-theme' ),
+		'id'            => 'footer-sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'buffalo-covenant-theme' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
