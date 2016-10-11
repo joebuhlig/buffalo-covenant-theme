@@ -907,7 +907,41 @@ a:active {
 	bottom: 10px;
 	width: 100%;
 }
-
+@media screen and (max-width: 900px) {
+	.home-title{
+		font-size: 0.8em;
+	}
+	.home-title .home-title-footer{
+		font-size: 1.2em;
+	}
+}
+@media screen and (max-width: 700px) {
+	.home-title{
+		font-size: 0.65em;
+	}
+	.home-title .home-title-footer{
+		font-size: 1.35em;
+	}
+}
+@media screen and (max-width: 550px) {
+	.home-title{
+		font-size: 0.45em;
+	}
+	.home-title .home-title-footer{
+		font-size: 2em;
+	}
+}
+@media screen and (max-width: 400px) {
+	.home-title{
+		font-size: 0.35em;
+	}
+	.home-title .home-title-footer{
+		font-size: 2em;
+	}
+	.main-navigation .logo{
+		max-width: 220px;
+	}
+}
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
