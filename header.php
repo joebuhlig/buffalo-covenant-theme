@@ -50,6 +50,9 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<div class="logo">
+			<img src="<?php echo get_theme_mod('header_light_logo') ?>" dark-logo="<?php echo get_theme_mod('header_dark_logo') ?>" alt="">
+			</div>
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'buffalo-covenant-theme' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->

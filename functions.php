@@ -145,12 +145,18 @@ function bcc_customize_register( $wp_customize ) {
    $wp_customize->add_section( 'header_video_section_name' , array(
         'title'    => __( 'Header Video', 'buffalo-covenant-theme' ),
         'priority' => 50
+    ) );  
+    $wp_customize->add_section( 'header_logo_section_name' , array(
+        'title'    => __( 'Header Logos', 'buffalo-covenant-theme' ),
+        'priority' => 60
     ) );   
 
     $wp_customize->add_setting( 'header_video_mp4');
     $wp_customize->add_setting( 'header_video_webm');
     $wp_customize->add_setting( 'header_video_ogv');
     $wp_customize->add_setting( 'header_video_poster');
+    $wp_customize->add_setting( 'header_dark_logo');
+    $wp_customize->add_setting( 'header_light_logo');
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_video_mp4', array(
         'label'    => __( 'Header Video MP4', 'buffalo-covenant-theme' ),
@@ -171,6 +177,16 @@ function bcc_customize_register( $wp_customize ) {
         'label'    => __( 'Header Video Poster', 'buffalo-covenant-theme' ),
         'section'  => 'header_video_section_name',
         'settings' => 'header_video_poster',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_dark_logo', array(
+        'label'    => __( 'Header Dark Logo', 'buffalo-covenant-theme' ),
+        'section'  => 'header_logo_section_name',
+        'settings' => 'header_dark_logo',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_light_logo', array(
+        'label'    => __( 'Header Light Logo', 'buffalo-covenant-theme' ),
+        'section'  => 'header_logo_section_name',
+        'settings' => 'header_light_logo',
     ) ) );
 }
 add_action( 'customize_register', 'bcc_customize_register' );
