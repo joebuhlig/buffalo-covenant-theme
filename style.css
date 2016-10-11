@@ -541,11 +541,55 @@ a:active {
     position: fixed;
     top: 0px;
     padding:20px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-navigation.scrolled {
+	background-color: #FFFFFF;
+    height: 50px;
+    padding: 10px;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .main-navigation .logo {
 	float:left;
 	max-width: 250px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-navigation.scrolled .logo{
+	max-width: 200px;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-navigation .logo img{
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;	
+}
+.main-navigation .logo .dark-logo{
+	display:none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-navigation .logo .light-logo{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 .main-navigation .menu-main-menu-container {
 	float: right;
@@ -621,6 +665,38 @@ a:active {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+.menu-toggle{
+	float:right;
+}
+.main-navigation.scrolled .menu-toggle{
+	padding: .2em 1em;
+}
+
+.menu-toggle, .menu-toggle:focus, .menu-toggle:active, .menu-toggle:visited, .menu-toggle:hover {
+	box-shadow: none;
+    border: 0px;
+    cursor: pointer;
+    border-color: transparent;
+    color: transparent;
+    outline: none;
+    background-color: transparent;
+}
+.menu-toggle svg{
+    width: 25px;
+    height: 25px;
+    fill: #ffffff;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-navigation.scrolled .menu-toggle svg{
+	fill: #254c5a;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -931,10 +1007,13 @@ object {
     overflow: hidden;
     background: #000;
 }
+
 .video-container .poster img {
-    width: 100%;
+    height: 100%;
     bottom: 0;
     position: absolute;
+    max-width: initial;
+    width: auto;
 }
 .video-container .filter {
     z-index: 100;

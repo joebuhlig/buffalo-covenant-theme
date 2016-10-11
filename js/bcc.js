@@ -1,16 +1,34 @@
 jQuery(function($) {
 //jQuery is required to run this code
+
 $( document ).ready(function() {
+    if (navigator.userAgent.match(/Mobile|webOS|Nexus 7/)){
+        $(".video-container video").remove();
+        $("body").addClass("mobile");
+        $(".video-container .poster").removeClass("hidden");
+    }
+    
+
+    $(document).on('scroll', function() {
+        if ($(window).scrollTop() > 0){
+            $(".main-navigation").addClass("scrolled");
+            $("#site-navigation .logo .light-logo").hide();
+            $("#site-navigation .logo .dark-logo").show();
+        }
+        else {
+            $("#site-navigation").removeClass("scrolled");
+            $("#site-navigation .logo .dark-logo").hide();
+            $("#site-navigation .logo .light-logo").show();
+        }
+    });
 
     scaleVideoContainer();
 
-    initBannerVideoSize('.video-container .poster img');
     initBannerVideoSize('.video-container .filter');
     initBannerVideoSize('.video-container video');
 
     $(window).on('resize', function() {
         scaleVideoContainer();
-        scaleBannerVideoSize('.video-container .poster img');
         scaleBannerVideoSize('.video-container .filter');
         scaleBannerVideoSize('.video-container video');
     });
