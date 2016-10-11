@@ -40,7 +40,7 @@
 				        </div>
 				    </div>
 				</div>
-				<h1 class="site-title"><span>WELCOME</span><br><span>to Buffalo Covenant Church</span></h1>
+				<div class="home-title"><?php dynamic_sidebar( 'home-title-sidebar' ); ?></div>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php

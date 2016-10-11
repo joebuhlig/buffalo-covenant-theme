@@ -865,6 +865,49 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.home-title{
+	position: absolute;
+	top: 0px;
+	height: 100%;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-family: Helvetica;
+    font-weight: lighter;
+    line-height: 1;
+    display: table;
+}
+.home-title .widget_home_title_widget{
+	display:table-cell;
+	vertical-align: middle;
+}
+.home-title .home-title-large{
+	font-size: 9.5em;
+}
+.home-title .home-title-subtext{
+	font-size: 2.8em;
+}
+.home-title .home-title-button{
+	font-size: 2em;
+	margin-top:30px;
+}
+.home-title .home-title-button a{
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    padding: 8px 25px;
+}
+.home-title .home-title-button a:hover,.home-title .home-title-button a:visited,.home-title .home-title-button a:focus{
+	color:#ffffff;
+	text-decoration: none;
+}
+.home-title .home-title-footer{
+	font-size: 1em;
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
