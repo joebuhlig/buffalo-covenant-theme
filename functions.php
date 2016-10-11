@@ -106,6 +106,8 @@ function buffalo_covenant_theme_scripts() {
 
 	wp_enqueue_script( 'buffalo-covenant-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '20161011', true);
+
 	wp_enqueue_script( 'buffalo-covenant-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -145,12 +147,37 @@ function bcc_customize_register( $wp_customize ) {
         'priority' => 50
     ) );   
 
-    $wp_customize->add_setting( 'header_video_new_setting_name');
+    $wp_customize->add_setting( 'header_video_mp4');
+    $wp_customize->add_setting( 'header_video_webm');
+    $wp_customize->add_setting( 'header_video_ogv');
+    $wp_customize->add_setting( 'header_video_poster');
 
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_video', array(
-        'label'    => __( 'Header Video', 'buffalo-covenant-theme' ),
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_video_mp4', array(
+        'label'    => __( 'Header Video MP4', 'buffalo-covenant-theme' ),
         'section'  => 'header_video_section_name',
-        'settings' => 'header_video_new_setting_name',
+        'settings' => 'header_video_mp4',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_video_webm', array(
+        'label'    => __( 'Header Video WEBM', 'buffalo-covenant-theme' ),
+        'section'  => 'header_video_section_name',
+        'settings' => 'header_video_webm',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_video_ogv', array(
+        'label'    => __( 'Header Video OGV', 'buffalo-covenant-theme' ),
+        'section'  => 'header_video_section_name',
+        'settings' => 'header_video_ogv',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_video_poster', array(
+        'label'    => __( 'Header Video Poster', 'buffalo-covenant-theme' ),
+        'section'  => 'header_video_section_name',
+        'settings' => 'header_video_poster',
     ) ) );
 }
 add_action( 'customize_register', 'bcc_customize_register' );
+
+function addUploadMimes($mimes) {
+    $mimes['webm'] = 'video/webm';
+	$mimes['ogv'] = 'video/ogv';    
+    return $mimes;
+}
+add_filter('mime_types', 'addUploadMimes');

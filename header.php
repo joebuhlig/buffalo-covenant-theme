@@ -27,6 +27,20 @@
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() ) : ?>
+				<div class="homepage-hero-module">
+				    <div class="video-container">
+				        <div class="filter"></div>
+				        <video autoplay loop class="fillWidth" poster="<?php echo get_theme_mod('header_video_poster') ?>">
+				            <source src="<?php echo get_theme_mod('header_video_mp4') ?>" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+				            <source src="<?php echo get_theme_mod('header_video_webm') ?>" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+				            <source src="<?php echo get_theme_mod('header_video_ogv') ?>" type="video/ogg" />Your browser does not support the video tag. I suggest you upgrade your browser.
+				            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
+				        </video>
+				        <div class="poster hidden">
+				            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
+				        </div>
+				    </div>
+				</div>
 				<h1 class="site-title"><span>WELCOME</span><br><span>to Buffalo Covenant Church</span></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
