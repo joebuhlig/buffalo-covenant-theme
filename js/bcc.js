@@ -1,5 +1,42 @@
 jQuery(function($) {
 //jQuery is required to run this code
+var container, button, menu, links, subMenus, i, len;
+
+container = document.getElementById( 'site-navigation' );
+if ( ! container ) {
+    return;
+}
+
+button = container.getElementsByTagName( 'button' )[0];
+if ( 'undefined' === typeof button ) {
+    return;
+}
+
+menu = container.getElementsByTagName( 'ul' )[0];
+
+// Hide menu toggle button if menu is empty and return early.
+if ( 'undefined' === typeof menu ) {
+    button.style.display = 'none';
+    return;
+}
+
+menu.setAttribute( 'aria-expanded', 'false' );
+if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
+    menu.className += ' nav-menu';
+}
+
+button.onclick = function() {
+    if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+        container.className = container.className.replace( ' toggled', '' );
+        button.setAttribute( 'aria-expanded', 'false' );
+        menu.setAttribute( 'aria-expanded', 'false' );
+    } else {
+        container.className += ' toggled';
+        // $(".main-navigation .top-level-menu").unbind('mouseenter mouseleave');
+        button.setAttribute( 'aria-expanded', 'true' );
+        menu.setAttribute( 'aria-expanded', 'true' );
+    }
+};
 
 $( document ).ready(function() {
     if (navigator.userAgent.match(/Mobile|webOS|Nexus 7/)){
@@ -21,6 +58,11 @@ $( document ).ready(function() {
             $("#site-navigation .logo .light-logo").show();
         }
     });
+
+    $(".main-navigation .top-level-menu").on('click', function(e){
+        e.preventDefault();
+        $(this).find("ul:first").slideToggle(200);
+    })
 
     scaleVideoContainer();
 

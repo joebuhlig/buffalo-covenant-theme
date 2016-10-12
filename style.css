@@ -585,6 +585,11 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+.main-navigation .logo a {
+	padding-bottom: 0px;
+    margin: 0px;
+
+}
 .main-navigation .logo img{
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -606,6 +611,7 @@ a:active {
 }
 .main-navigation .menu-main-menu-container {
 	float: right;
+	margin: 5px 0px 0px 0px;
 }
 .main-navigation ul {
 	display: none;
@@ -621,21 +627,60 @@ a:active {
 
 .main-navigation a {
 	display: block;
-	text-decoration: none;
+    text-decoration: none;
+    color: #fff;
+    font-family: Helvetica;
+    font-weight: lighter;
+    margin: 0px 20px;
+    padding-bottom: 10px;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
-
+.main-navigation.scrolled a{
+	color: #254c5a;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
-	left: -999em;
+	display: none;
 	z-index: 99999;
+	width: 50em;
+	right: -230px;
+	background-color: #ffffff;
+}
+.main-navigation ul ul li>a {
+	color: #254c5a;
+    margin: 10px 15px;
+    border-bottom: 1px dashed #666;
+    width: auto;
+    text-align: center;
+    font-weight: initial;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+    top: 0;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    box-shadow: none;
+    display: initial;
+}
+.main-navigation ul ul ul li {
+    display: block;
+    width: 100%;
+}
+.main-navigation ul ul ul li a{
+    border: 0px;
+    text-align: left;
+    font-weight: lighter;
+    margin: 5px 15px;
 }
 
 .main-navigation ul ul a {
@@ -643,7 +688,9 @@ a:active {
 }
 
 .main-navigation ul ul li {
-
+	display: inline-block;
+	float:none;
+	width: calc(20% - 10px);
 }
 
 .main-navigation li:hover > a,
@@ -658,16 +705,6 @@ a:active {
 .main-navigation ul ul a.focus {
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
@@ -679,10 +716,58 @@ a:active {
 .main-navigation.toggled ul {
 	display: block;
 }
+.main-navigation.toggled .menu-main-menu-container{
+	float: none;
+	clear: both;
+    width: 200px;
+    right: 0px;
+    position: absolute;
+    top: 55px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-navigation.toggled.scrolled .menu-main-menu-container{
+	top: 45px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-navigation.toggled li{
+	float: none;
+    padding: 10px 0px 0px 0px;
+}
+.main-navigation.toggled li a{
+	color: #254c5a;
+}
+.main-navigation.toggled .menu-main-menu-container>ul{
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	background-color: #ffffff;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-navigation.toggled .menu-main-menu-container ul{
+	position: initial;
+}
+.main-navigation.toggled ul ul {
+	box-shadow: none;
+	display: none;
+}
+.main-navigation.toggled ul ul ul{
+	display: initial;
+}
+.main-navigation.toggled ul ul li {
+	display: block;
+	width: 200px;
+}
 .menu-toggle{
 	float:right;
 }
-.main-navigation.scrolled .menu-toggle{
+.main-navigation .menu-toggle{
 	padding: .2em 1em;
 }
 
@@ -711,12 +796,21 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+.non-mobile{
+	display: none;
+}
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 56em) {
 	.menu-toggle {
 		display: none;
 	}
 	.main-navigation ul {
+		display: block;
+	}
+	.mobile-only{
+		display: none;
+	}
+	.non-mobile{
 		display: block;
 	}
 }
