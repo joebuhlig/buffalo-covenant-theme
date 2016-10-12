@@ -73,7 +73,10 @@ section,
 summary {
 	display: block;
 }
-
+article{
+	display: inline-block;
+	width: calc(70% - 20px);
+}
 footer {
 	background-color: #e6e6e6;
 	width: 100%;
@@ -717,6 +720,11 @@ a:active {
 		display: block;
 	}
 }
+.site-main {
+	width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+}
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -1118,4 +1126,11 @@ object {
 }
 .video-container video.fillWidth {
     width: 100%;
+}
+.sidebar{
+	width: 30%;
+	display: inline-block;
+}
+.home article{
+	width: 100%;
 }
