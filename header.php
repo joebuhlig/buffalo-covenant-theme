@@ -41,6 +41,15 @@
 				    </div>
 				</div>
 				<div class="home-title"><?php dynamic_sidebar( 'home-title-sidebar' ); ?></div>
+				<div class="sermon-player-wrapper">
+					<div class="sermon-player">
+						<div class="sermon-player-title">
+							<div>The Beginning of Time in Genesis</div>
+							<div class="sermon-player-date">October 10, 2016</div>
+						</div>
+						<div class="sermon-player-button"><button>Play</button></div>
+					</div>
+				</div>
 			<?php else : ?>
 				<div class="poster page">
 		            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
