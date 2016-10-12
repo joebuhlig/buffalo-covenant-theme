@@ -444,7 +444,7 @@ input[type="submit"] {
     font-size: 12px;
     font-size: 1rem;
     line-height: 1.1;
-    padding: .6em 1em .4em;
+    padding: .5em 1em .4em;
     text-shadow: none;
 }
 
@@ -1258,4 +1258,10 @@ object {
 	padding: 5px 30px;
 	height: 100%;
 	vertical-align: top;
+}
+.sermon-player-button svg{
+    fill: #fff;
+    height: 17px;
+    width: 17px;
+    vertical-align: top;
 }
