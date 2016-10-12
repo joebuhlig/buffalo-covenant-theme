@@ -1084,7 +1084,6 @@ object {
     overflow: hidden;
     background: #000;
 }
-
 .video-container .poster img {
     height: 100%;
     bottom: 0;
@@ -1092,11 +1091,15 @@ object {
     max-width: initial;
     width: auto;
 }
-.video-container .filter {
-    z-index: 100;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
+.site-header .poster.page {
+    position: relative;
+    overflow: hidden;
     width: 100%;
+    height: 130px;
+}
+.site-header .poster.page img{
+    position: absolute;
+    bottom: 0px;
 }
 .video-container video {
     position: absolute;

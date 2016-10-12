@@ -42,7 +42,9 @@
 				</div>
 				<div class="home-title"><?php dynamic_sidebar( 'home-title-sidebar' ); ?></div>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<div class="poster page">
+		            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
+		        </div>
 			<?php
 			endif;
 			?>
