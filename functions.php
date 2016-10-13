@@ -237,19 +237,6 @@ function get_latest_sermon(){
 	return $sermon;
 }
 
-add_action( 'init', 'wpse26388_rewrites_init' );
-function wpse26388_rewrites_init(){
-    add_rewrite_rule(
-        '^sermons/([a-zA-Z0-9\-]+)/?',
-        'index.php?pagename=sermons&audio_url=$matches[1]',
-        'top' );
-}
-
-add_filter( 'query_vars', 'wpse26388_query_vars' );
-function wpse26388_query_vars( $query_vars ){
-    $query_vars[] = 'audio_url';
-    return $query_vars;
-}
 /**
  * Adds My_Widget widget.
  */
