@@ -1289,3 +1289,14 @@ object {
 	padding: 10px 20px;
     font-size: 0.9rem;
 }
+.sermon {
+    margin: 0px;
+    font-size: 0.8em;
+    border-top: 1px dashed #666;
+    padding: 15px 0px;
+}
+.sermon a {
+    color: #254c5a;
+    font-size: 1.2em;
+    text-decoration: none;
+}
