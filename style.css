@@ -976,7 +976,7 @@ a:active {
 	margin: 0 0 1.5em;
 }
 .home .site-branding{
-	margin-bottom: -53px;
+	margin-bottom: -65px;
 }
 
 .home-title{
@@ -1232,7 +1232,7 @@ object {
 }
 .sermon-player-wrapper{
     position: relative;
-    bottom: 53px;
+    bottom: 65px;
     color: #fff;
     font-weight: lighter;
     font-family: Helvetica;
@@ -1254,13 +1254,13 @@ object {
 }
 .sermon-player-title{
 	display: inline-block;
-	padding: 0px 30px;
+	padding: 6px 10px;
 	height: 100%;
 	vertical-align: top;
 }
 .sermon-player-button{
 	display: inline-block;
-	padding: 5px 30px;
+	padding: 5px 10px;
 	height: 100%;
 	vertical-align: top;
 }
