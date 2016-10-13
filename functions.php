@@ -236,6 +236,20 @@ function get_latest_sermon(){
 	$sermon = '<div class="sermon-player-title"><div>' . $title . '</div><div class="sermon-player-date">' . $date . '</div></div><div class="sermon-player-button"><a href="' . $link . '"><button><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve"><path d="M405.2,232.9L126.8,67.2c-3.4-2-6.9-3.2-10.9-3.2c-10.9,0-19.8,9-19.8,20H96v344h0.1c0,11,8.9,20,19.8,20  c4.1,0,7.5-1.4,11.2-3.4l278.1-165.5c6.6-5.5,10.8-13.8,10.8-23.1C416,246.7,411.8,238.5,405.2,232.9z"/></svg>Play</button></a></div>';
 	return $sermon;
 }
+
+add_action( 'init', 'wpse26388_rewrites_init' );
+function wpse26388_rewrites_init(){
+    add_rewrite_rule(
+        '^sermons/([a-zA-Z0-9\-]+)/?',
+        'index.php?pagename=sermons&audio_url=$matches[1]',
+        'top' );
+}
+
+add_filter( 'query_vars', 'wpse26388_query_vars' );
+function wpse26388_query_vars( $query_vars ){
+    $query_vars[] = 'audio_url';
+    return $query_vars;
+}
 /**
  * Adds My_Widget widget.
  */
