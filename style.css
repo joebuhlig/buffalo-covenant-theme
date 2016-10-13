@@ -279,7 +279,7 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #4d4d4d;
 	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -975,6 +975,9 @@ a:active {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.home .site-branding{
+	margin-bottom: -53px;
+}
 
 .home-title{
 	position: absolute;
@@ -1229,13 +1232,12 @@ object {
 }
 .sermon-player-wrapper{
     position: relative;
-    bottom: 60px;
+    bottom: 53px;
     color: #fff;
     font-weight: lighter;
     font-family: Helvetica;
     padding: 5px 20px;
     background-color: rgba(230,230,230,0.4);
-    height: 60px;
 }
 .sermon-player button {
 	color:#ffffff;
@@ -1268,4 +1270,22 @@ object {
     width: 17px;
     vertical-align: top;
     margin-right: 5px;
+}
+.mission-statement{
+	text-align: center;
+}
+.mission-statement div{
+	margin-bottom: 20px;
+}
+.mission-statement-main{
+	font-weight: bold;
+	font-size: 1.3em;
+	letter-spacing: 2px;
+}
+.mission-statement-sub{
+	color: #666666;
+}
+.mission-statement-button button{
+	padding: 10px 20px;
+    font-size: 0.9rem;
 }
