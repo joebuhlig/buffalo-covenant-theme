@@ -59,9 +59,13 @@ $( document ).ready(function() {
         }
     });
 
-    $(".main-navigation .top-level-menu").on('click', function(e){
+    $(".main-navigation .top-level-menu a:first").on('click', function(e){
+        if($(this).hasClass('sub-menu')) {
+            return;
+        }        
+        console.log(this);
         e.preventDefault();
-        $(this).find("ul:first").slideToggle(200);
+        $(".main-navigation .top-level-menu ul:first").slideToggle(200);
     })
 
     scaleVideoContainer();

@@ -522,11 +522,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #254c5a;
 }
 
 a:visited {
-	color: purple;
+	color: #254c5a;
 }
 
 a:hover,
@@ -967,7 +967,7 @@ a:active {
 
 .page-content,
 .entry-content,
-.entry-summary {
+.entry-summary, .sidebar {
 	margin: 1.5em 0 0;
 }
 
@@ -1226,6 +1226,7 @@ object {
 .sidebar{
 	width: 30%;
 	display: inline-block;
+	vertical-align: top;
 }
 .home article{
 	width: 100%;
