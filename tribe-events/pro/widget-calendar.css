@@ -1,0 +1,9 @@
+.tribe-mini-calendar-event .list-date{
+	display: none;
+}
+.tribe-mini-calendar-event .list-info{
+	margin: 0px;
+}
+.type-tribe_events {
+    padding: 0px 10px;
+}

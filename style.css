@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -76,6 +76,7 @@ summary {
 article{
 	display: inline-block;
 	width: calc(70% - 20px);
+	padding: 10px;
 }
 footer {
 	background-color: #e6e6e6;
@@ -803,7 +804,6 @@ a:active {
 	width: 100%;
     max-width: 1200px;
     margin: 0px auto;
-    padding: 20px;
 }
 
 .site-main .comment-navigation,
@@ -956,6 +956,9 @@ a:active {
 .entry-content,
 .entry-summary, .sidebar {
 	margin: 1.5em 0 0;
+}
+.home .entry-content{
+	text-align: center;
 }
 
 .page-links {
@@ -1214,6 +1217,7 @@ object {
 	width: 30%;
 	display: inline-block;
 	vertical-align: top;
+	padding: 10px;
 }
 .home article{
 	width: 100%;
@@ -1291,6 +1295,7 @@ object {
 .featured-sidebar{
     width: 100%;
     text-align: center;
+    margin-top: 50px;
 }
 .featured-event-image{
     width: 100%;
@@ -1305,6 +1310,21 @@ object {
     width: 300px;
     text-align: left;
     margin: 0px 20px;
+}
+.home-events {
+    max-width: 600px;
+    margin: 50px 0px 25px;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+.widget-title, .home-events-title{
+	background-color: #ede2c8;
+    padding: 5px 10px;
+    font-weight: lighter;
+}
+.widget-title{
+	font-size: 1.2em;
 }
 
 @media screen and (min-width: 56em) {
