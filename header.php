@@ -19,7 +19,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php if ( is_front_page() ){ body_class(); } else { body_class("back-page"); } ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'buffalo-covenant-theme' ); ?></a>
 
@@ -54,6 +54,11 @@
 					<? else : ?>
 			            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
 			        <?php endif; ?>
+			        <header class="entry-header">
+					<?php if ( !is_front_page() ) :
+						the_title( '<h1 class="entry-title">', '</h1>' ); 
+					endif; ?>
+				</header>
 		        </div>
 			<?php
 			endif;

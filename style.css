@@ -563,6 +563,9 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+.back-page .main-navigation{
+	background-color: #254c5a;
+}
 .main-navigation.scrolled {
 	background-color: #FFFFFF;
     height: 50px;
@@ -572,6 +575,9 @@ a:active {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+.back-page .main-navigation.scrolled{
+	background-color: #254c5a;
 }
 
 .main-navigation .logo {
@@ -615,6 +621,9 @@ a:active {
 }
 .main-navigation .menu-main-menu-container, .main-navigation .menu-mobile-menu-container {
 	float: right;
+	margin: 9px 0px 0px 0px;
+}
+.main-navigation.scrolled .menu-main-menu-container, .main-navigation.scrolled .menu-mobile-menu-container {
 	margin: 5px 0px 0px 0px;
 }
 .main-navigation ul {
@@ -650,6 +659,9 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+.back-page .main-navigation.scrolled a {
+	color: #ffffff;
+}
 .main-navigation ul ul {
 	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
 	float: left;
@@ -661,14 +673,13 @@ a:active {
 	background-color: #ffffff;
 }
 .main-navigation ul ul li>a {
-	color: #254c5a;
+	color: #254c5a !important;
     margin: 10px 15px;
     border-bottom: 1px dashed #666;
     width: auto;
     text-align: center;
     font-weight: initial;
 }
-
 .main-navigation ul ul ul {
     top: 0;
     position: relative;
@@ -862,6 +873,9 @@ a:active {
 }
 .main-navigation.scrolled #search-menu-item svg{
 	fill:#254c5a;
+}
+.back-page .main-navigation.scrolled #search-menu-item svg{
+	fill: #ffffff;
 }
 .main-navigation.scrolled #search-menu-item-form .search-field {
     color: #254c5a;
@@ -1293,6 +1307,13 @@ object {
 .site-header .poster.page img{
     position: absolute;
     bottom: 0px;
+}
+.site-header .poster.page header{
+    top: calc(66% - 72px);
+    color: #fff;
+    position: relative;
+    text-align: center;
+    font-size: 1.5em;
 }
 .video-container video {
     position: absolute;
