@@ -662,6 +662,9 @@ a:active {
 .back-page .main-navigation.scrolled a {
 	color: #ffffff;
 }
+.back-page .main-navigation.scrolled.toggled a {
+	color: #254c5a;
+}
 .main-navigation ul ul {
 	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
 	float: left;
@@ -870,6 +873,9 @@ a:active {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+.back-page .main-navigation.scrolled .menu-toggle svg{
+	fill: #ffffff;
 }
 .main-navigation.scrolled #search-menu-item svg{
 	fill:#254c5a;
