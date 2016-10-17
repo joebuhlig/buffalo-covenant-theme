@@ -49,7 +49,11 @@
 				</div>
 			<?php else : ?>
 				<div class="poster page">
-		            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
+					<?php if (has_post_thumbnail()) : ?>
+						<?php echo get_the_post_thumbnail() ?>
+					<? else : ?>
+			            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
+			        <?php endif; ?>
 		        </div>
 			<?php
 			endif;
