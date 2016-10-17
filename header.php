@@ -36,7 +36,7 @@
 				            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
 				        </video>
 				        <div class="poster hidden">
-				            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
+				            <img src="<?php echo get_theme_mod('header_mobile_poster') ?>" alt="">
 				        </div>
 				    </div>
 				</div>
