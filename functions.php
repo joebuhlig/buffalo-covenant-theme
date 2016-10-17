@@ -45,6 +45,7 @@ function buffalo_covenant_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'buffalo-covenant-theme' ),
+		'mobile' => esc_html__('Mobile', 'buffalo-covenant-theme'),
 	) );
 
 	/*

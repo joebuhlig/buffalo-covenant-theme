@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.9
+Version: 1.0.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -609,7 +609,7 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.main-navigation .menu-main-menu-container {
+.main-navigation .menu-main-menu-container, .main-navigation .menu-mobile-menu-container {
 	float: right;
 	margin: 5px 0px 0px 0px;
 }
@@ -716,20 +716,20 @@ a:active {
 .main-navigation.toggled ul {
 	display: block;
 }
-.main-navigation.toggled .menu-main-menu-container{
+.main-navigation.toggled .menu-main-menu-container, .main-navigation.toggled .menu-mobile-menu-container{
 	float: none;
 	clear: both;
     width: 200px;
     right: 0px;
     position: absolute;
-    top: 55px;
+    top: 54px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.main-navigation.toggled.scrolled .menu-main-menu-container{
-	top: 45px;
+.main-navigation.toggled.scrolled .menu-main-menu-container, .main-navigation.toggled.scrolled .menu-mobile-menu-container{
+	top: 44px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -742,7 +742,7 @@ a:active {
 .main-navigation.toggled li a{
 	color: #254c5a;
 }
-.main-navigation.toggled .menu-main-menu-container>ul{
+.main-navigation.toggled .menu-main-menu-container>ul, .main-navigation.toggled .menu-mobile-menu-container>ul{
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	background-color: #ffffff;
     -webkit-transition: all 0.5s ease;
@@ -750,7 +750,7 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.main-navigation.toggled .menu-main-menu-container ul{
+.main-navigation.toggled .menu-main-menu-container ul, .main-navigation.toggled .menu-mobile-menu-container ul{
 	position: initial;
 }
 .main-navigation.toggled ul ul {

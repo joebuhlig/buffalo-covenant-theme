@@ -63,7 +63,6 @@ $( document ).ready(function() {
         if($(this).hasClass('sub-menu')) {
             return;
         }        
-        console.log(this);
         e.preventDefault();
         $(".main-navigation .top-level-menu ul:first").slideToggle(200);
     })
