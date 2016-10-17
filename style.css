@@ -716,6 +716,41 @@ a:active {
 .main-navigation .current-menu-ancestor > a {
 }
 
+#search-menu-item svg{
+	height: 18px;
+	width: 18px;
+	fill:#ffffff;
+	margin-top: 2px;
+}
+#search-menu-item-form{
+	right: 30px;
+    position: absolute;
+    margin-top: -5px;
+    display: none;
+}
+#search-menu-item-form .search-field{
+	background-color: rgba(220,220,220,0.5);
+    border: 0px;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    width: 200px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #FFFFFF;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #FFFFFF;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #FFFFFF;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #FFFFFF;
+}
+#search-menu-item-form .search-submit{
+	display: none;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -769,6 +804,30 @@ a:active {
 	display: block;
 	width: 200px;
 }
+.main-navigation.toggled #search-menu-item{
+	display: none;
+}
+.main-navigation.toggled #search-menu-item-form{
+	position: initial;
+	display: block !important;
+}
+.main-navigation.toggled #search-menu-item-form .search-field{
+	background-color: #ffffff;
+	padding: 5px 20px;
+	color: #254c5a;
+}
+.main-navigation.toggled ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #254c5a;
+}
+.main-navigation.toggled ::-moz-placeholder { /* Firefox 19+ */
+  color: #254c5a;
+}
+.main-navigation.toggled :-ms-input-placeholder { /* IE 10+ */
+  color: #254c5a;
+}
+.main-navigation.toggled :-moz-placeholder { /* Firefox 18- */
+  color: #254c5a;
+}
 .menu-toggle{
 	float:right;
 }
@@ -800,6 +859,24 @@ a:active {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+.main-navigation.scrolled #search-menu-item svg{
+	fill:#254c5a;
+}
+.main-navigation.scrolled #search-menu-item-form .search-field {
+    color: #254c5a;
+}
+.main-navigation.scrolled ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #254c5a;
+}
+.main-navigation.scrolled ::-moz-placeholder { /* Firefox 19+ */
+  color: #254c5a;
+}
+.main-navigation.scrolled :-ms-input-placeholder { /* IE 10+ */
+  color: #254c5a;
+}
+.main-navigation.scrolled :-moz-placeholder { /* Firefox 18- */
+  color: #254c5a;
 }
 .non-mobile{
 	display: none;
