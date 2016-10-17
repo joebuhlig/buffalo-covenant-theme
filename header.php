@@ -43,6 +43,7 @@
 				<div class="home-title"><?php dynamic_sidebar( 'home-title-sidebar' ); ?></div>
 				<div class="sermon-player-wrapper">
 					<div class="sermon-player">
+						<div class="sermon-player-latest">Latest Message</div>
 						<?php echo get_latest_sermon() ?>
 					</div>
 				</div>
