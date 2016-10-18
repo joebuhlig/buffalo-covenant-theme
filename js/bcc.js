@@ -17,13 +17,13 @@ $( document ).ready(function() {
     $(document).on('scroll', function() {
         if ($(window).scrollTop() > 0){
             $(".main-navigation").addClass("scrolled");
-            $(".home #site-navigation .logo .light-logo").hide();
-            $(".home #site-navigation .logo .dark-logo").show();
+            // $(".home #site-navigation .logo .light-logo").hide();
+            // $(".home #site-navigation .logo .dark-logo").show();
         }
         else {
             $("#site-navigation").removeClass("scrolled");
-            $(".home #site-navigation .logo .dark-logo").hide();
-            $(".home #site-navigation .logo .light-logo").show();
+            // $(".home #site-navigation .logo .dark-logo").hide();
+            // $(".home #site-navigation .logo .light-logo").show();
         }
     });
 

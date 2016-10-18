@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.17
+Version: 1.0.18
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -537,7 +537,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #123441;
 }
 
 a:focus {
@@ -563,11 +563,8 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.back-page .main-navigation{
-	background-color: #254c5a;
-}
 .main-navigation.scrolled {
-	background-color: #FFFFFF;
+	background-color: #4d4d4d;
     height: 50px;
     padding: 10px;
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
@@ -576,10 +573,9 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.back-page .main-navigation.scrolled{
-	background-color: #254c5a;
+.back-page .main-navigation{
+	background-color: #4d4d4d;
 }
-
 .main-navigation .logo {
 	float:left;
 	max-width: 250px;
@@ -641,29 +637,37 @@ a:active {
 .main-navigation a {
 	display: block;
     text-decoration: none;
-    color: #fff;
     font-family: Helvetica;
     font-weight: lighter;
-    margin: 0px 20px;
+    margin: 0px 17px;
     padding-bottom: 10px;
     cursor: pointer;
+    text-transform: uppercase;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.main-navigation.scrolled a{
-	color: #254c5a;
-	-webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.back-page .main-navigation.scrolled a {
+.main-navigation a, .back-page .main-navigation.scrolled a {
 	color: #ffffff;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
+/*.main-navigation.scrolled a{
+	color: #ffffff;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}*/
 .back-page .main-navigation.scrolled.toggled a {
 	color: #254c5a;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 .main-navigation ul ul {
 	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
@@ -868,36 +872,33 @@ a:active {
     transition: all 0.5s ease;
 }
 .main-navigation.scrolled .menu-toggle svg{
-	fill: #254c5a;
+	/*fill: #254c5a;*/
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.back-page .main-navigation.scrolled .menu-toggle svg{
+.back-page .main-navigation.scrolled .menu-toggle svg, .back-page .main-navigation.scrolled #search-menu-item svg{
 	fill: #ffffff;
 }
 .main-navigation.scrolled #search-menu-item svg{
-	fill:#254c5a;
-}
-.back-page .main-navigation.scrolled #search-menu-item svg{
-	fill: #ffffff;
+	/*fill:#254c5a;*/
 }
 .main-navigation.scrolled #search-menu-item-form .search-field {
     color: #254c5a;
 }
-.main-navigation.scrolled ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+/*.main-navigation.scrolled ::-webkit-input-placeholder {
   color: #254c5a;
 }
-.main-navigation.scrolled ::-moz-placeholder { /* Firefox 19+ */
+.main-navigation.scrolled ::-moz-placeholder {
   color: #254c5a;
 }
-.main-navigation.scrolled :-ms-input-placeholder { /* IE 10+ */
+.main-navigation.scrolled :-ms-input-placeholder {
   color: #254c5a;
 }
-.main-navigation.scrolled :-moz-placeholder { /* Firefox 18- */
+.main-navigation.scrolled :-moz-placeholder {
   color: #254c5a;
-}
+}*/
 .non-mobile{
 	display: none;
 }
@@ -1078,7 +1079,7 @@ a:active {
 
 .home-title{
 	position: absolute;
-	top: 20%;
+	top: 28%;
 	height: 100%;
     text-align: center;
     width: 100%;
@@ -1308,7 +1309,7 @@ object {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 250px;
+    height: 400px;
 }
 .site-header .poster.page img{
     position: absolute;
@@ -1384,6 +1385,9 @@ object {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+.sermon-player-title-text a {
+	color: #ffffff;
 }
 .sermon-player-button{
 	display: inline-block;
@@ -1463,11 +1467,11 @@ object {
 .featured-sidebar{
     width: 100%;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 .featured-event-image{
     width: 100%;
-    max-height: 157px;
+    max-height: 160px;
     overflow: hidden;
 }
 .featured-event-image img{
@@ -1475,9 +1479,9 @@ object {
 }
 .widget_featured_event_widget {
     display: inline-block;
-    width: 290px;
+    width: 320px;
     text-align: left;
-    margin: 20px;
+    margin: 10px;
 }
 .widget_featured_event_widget a {
     text-decoration: none;
