@@ -14,8 +14,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area" style="background-color: #f8f5ec;">
+		<main id="main" class="site-main" role="main" style="text-align: center;">
 
 			<?php
 			while ( have_posts() ) : the_post();
@@ -31,7 +31,7 @@ get_header(); ?>
 			?>
 			<?php
 			if ( !is_front_page() ) : ?>
-			<div class="sidebar">
+			<div class="sidebar" style="display: none;">
 				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
 			</div>
 			<?php endif ?>
