@@ -55,10 +55,12 @@
 			            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
 			        <?php endif; ?>
 			        <header class="entry-header">
-					<?php if ( !is_front_page() ) :
-						the_title( '<h1 class="entry-title">', '</h1>' ); 
-					endif; ?>
-				</header>
+						<?php if ( !is_front_page() && !is_post_type_archive() ) :
+							the_title( '<h1 class="entry-title">', '</h1>' ); 
+						elseif (is_post_type_archive()) :
+							?><h1 class="entry-title"><?php echo post_type_archive_title(); ?></h1><?php
+						endif; ?>
+					</header>
 		        </div>
 			<?php
 			endif;
