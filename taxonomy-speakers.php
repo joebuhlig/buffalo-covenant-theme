@@ -27,10 +27,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-		
-			<div class="sidebar">
-				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
-			</div>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

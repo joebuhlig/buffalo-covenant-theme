@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.20
+Version: 1.0.21
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -1312,7 +1312,7 @@ object {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 400px;
+    height: 350px;
 }
 .site-header .poster.page img{
     position: absolute;
@@ -1518,6 +1518,49 @@ object {
 }
 .message-details{
 	display: inline-block;
+	margin: 0px 15px;
+	vertical-align: top;
+    max-width: calc(100% - 160px);
+}
+.message-details .entry-title {
+    margin: 0px;
+}
+.message-details .entry-content{
+	margin: 0px;
+}
+.message-meta{
+	font-size: 0.85em;
+}
+.single-message article{
+	margin-top: 1.5em;
+}
+.single-message .message-thumbnail{
+	max-width: 60px;
+	margin-right: 10px;
+	display: inline-block;
+}
+.single-message .message-thumbnail img{
+	max-height: 100%;
+}
+.single-message .message-meta{
+    display: inline-block;
+    font-size: 0.9em;
+    vertical-align: top;
+}
+.embed-vimeo-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.embed-vimeo-container iframe, .embed-vimeo-container object, .embed-vimeo-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 @media screen and (min-width: 56em) {

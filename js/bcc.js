@@ -55,6 +55,11 @@ $( document ).ready(function() {
         $("#site-navigation").removeClass("toggled");
     });
 
+    setWeekCalClickEvent();
+    $(document).on('DOMNodeInserted', function(e) {
+        setWeekCalClickEvent();
+    });
+
     scaleVideoContainer();
 
     initBannerVideoSize('.video-container .filter');
@@ -67,6 +72,16 @@ $( document ).ready(function() {
     });
 
 });
+
+function setWeekCalClickEvent(){
+    $(".tribe-this-week-widget-day").unbind("click");
+    $(".tribe-this-week-widget-day").click(function(){
+        $(".tribe-this-week-widget-day-wrap").fadeOut(200);
+        $(".this-week-today").removeClass("this-week-today");
+        $(this).addClass("this-week-today");
+        $(this).find(".tribe-this-week-widget-day-wrap").fadeIn(200);
+    });
+}
 
 function scaleVideoContainer() {
 

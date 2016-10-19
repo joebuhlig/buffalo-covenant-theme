@@ -7,3 +7,59 @@
 .type-tribe_events {
     padding: 0px 10px;
 }
+.tribe-this-week-event {
+	border: 0px !important;
+}
+.tribe-this-week-events-widget .tribe-events-page-title{
+    position: absolute;
+    top: 5px;
+    left: calc(50% - 175px);
+    color: #fff;
+    font-size: 20px !important;
+    width: 350px;
+    margin: 0px;
+}
+.tribe-this-week-event .duration{
+	display: inline-block;
+}
+.tribe-this-week-event .entry-title{
+	display: inline-block;
+	font-weight: bold;
+	margin-left: 15px !important;
+}
+.tribe-this-week-widget-day{
+	cursor: pointer;
+}
+.tribe-this-week-widget-day-wrap{
+	display: none;
+	position: absolute;
+	left: 0px;
+}
+.tribe-this-week-widget-day.this-week-today .tribe-this-week-widget-day-wrap{
+	display: initial;
+}
+.tribe-this-week-widget-day .date{
+    font-size: 40px;
+    font-weight: lighter;
+}
+.tribe-this-week-widget-day .day{
+	font-weight: lighter;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.tribe-this-week-widget-day .tribe-this-week-widget-header-date{
+	background-color: #ffffff;
+	border-bottom: 1px solid #e6e6e6;
+    color: #b9b9b9;
+}
+.tribe-this-week-widget-day.this-week-today .tribe-this-week-widget-header-date{
+	background-color: #254c5a;
+	color: #ffffff;
+}
+.entry-content ul.tribe-events-sub-nav, .tribe-events-sub-nav{
+	background-color: #254c5a;
+	margin: 0px !important;
+}
+.tribe-this-week-nav-link a, .tribe-this-week-nav-link a:visited{
+	color: #ffffff;
+}

@@ -55,10 +55,13 @@
 			            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
 			        <?php endif; ?>
 			        <header class="entry-header">
-						<?php if ( !is_front_page() && !is_post_type_archive() ) :
+						<?php if ( !is_front_page() && !is_post_type_archive() && !is_tax() ) :
 							the_title( '<h1 class="entry-title">', '</h1>' ); 
-						elseif (is_post_type_archive()) :
+						elseif (is_post_type_archive() && !is_tax()) :
 							?><h1 class="entry-title"><?php echo post_type_archive_title(); ?></h1><?php
+						elseif (is_tax()) :
+							$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+							?><h1 class="entry-title"><?php echo $term->name; ?></h1><?php
 						endif; ?>
 					</header>
 		        </div>
