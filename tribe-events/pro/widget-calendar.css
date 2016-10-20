@@ -13,10 +13,10 @@
 .tribe-this-week-events-widget .tribe-events-page-title{
     position: absolute;
     top: 5px;
-    left: calc(50% - 175px);
+    left: 30px;
     color: #fff;
     font-size: 20px !important;
-    width: 350px;
+    width: calc(100% - 55px);
     margin: 0px;
 }
 .tribe-this-week-event .duration{
