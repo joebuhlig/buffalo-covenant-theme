@@ -11,23 +11,23 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<div class="articles">
+			<?php
+			if ( have_posts() ) : 
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
+					get_template_part( 'template-parts/content', 'message' );
 
-		<?php
-		if ( have_posts() ) : 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/content', 'message' );
+				endwhile;
 
-			endwhile;
+				the_posts_navigation();
 
-			the_posts_navigation();
+			else :
 
-		else :
+				get_template_part( 'template-parts/content', 'none' );
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-		
+			endif; ?>
+			</div>
 			<div class="sidebar">
 				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
 			</div>

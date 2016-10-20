@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.22
+Version: 1.0.23
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -74,8 +74,6 @@ summary {
 	display: block;
 }
 article{
-	display: inline-block;
-	width: calc(70% - 20px);
 	padding: 10px;
 }
 footer {
@@ -917,7 +915,7 @@ a:active {
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 20px 0 1.5em;
 	overflow: hidden;
 }
 
@@ -927,6 +925,11 @@ a:active {
 	float: left;
 	width: 50%;
 }
+.comment-navigation .nav-previous a:before,
+.posts-navigation .nav-previous a:before,
+.post-navigation .nav-previous a:before {
+	content: "←";
+}
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
@@ -934,6 +937,11 @@ a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+.comment-navigation .nav-next a:after,
+.posts-navigation .nav-next a:after,
+.post-navigation .nav-next a:after {
+    content: "→";
 }
 
 /*--------------------------------------------------------------
@@ -1342,7 +1350,7 @@ object {
 	padding: 10px;
 }
 .sidebar .widget .search-field{
-	width:250px;
+	width:calc(100% - 90px);
 	border-radius: 0px;
 }
 .home article{
@@ -1514,6 +1522,11 @@ object {
 .widget-title{
 	font-size: 1.2em;
 }
+.articles{
+    display: inline-block;
+    width: calc(70% - 20px);
+    padding-top: 1.5em;
+}
 .message-thumbnail{
 	max-width: 120px;
 	display: inline-block;
@@ -1537,7 +1550,7 @@ object {
 	margin-top: 1.5em;
 }
 .single-message .message-thumbnail{
-	max-width: 60px;
+	max-width: 130px;
 	margin-right: 10px;
 	display: inline-block;
 }
@@ -1548,6 +1561,27 @@ object {
     display: inline-block;
     font-size: 0.9em;
     vertical-align: top;
+}
+.single-message .message-meta h1{
+	margin: 0px;
+}
+.single-message .message-medium-toggle{
+	margin-top: 15px;
+}
+.single-message .message-player{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.single-message .message-player.show-video .wp-audio-shortcode{
+	display: none;
+}
+.single-message .message-player.show-audio .embed-vimeo-container{
+	display: none;
+}
+.single-message .message-archive-link{
+	margin-bottom: 15px;
 }
 .embed-vimeo-container {
 	position: relative;

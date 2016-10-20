@@ -37,27 +37,23 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<article>
-				<?php if ($vimeo_id) : ?>
-					<div class="embed-vimeo-container"><iframe id="vimeoplayer" src="//player.vimeo.com/video/<?php echo $vimeo_id; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					</div>
-				<? endif;
-				if ($podcast) : ?>
-					<img src="<?php echo $thumb_src ?>"><?php
-					echo wp_audio_shortcode($audio_attrs);
-				endif; ?>
-			</article>
-			<div class="sidebar">
+				<div class="message-archive-link"><a href="/messages/">← Back to Archive</a></div>
 				<div class="message-thumbnail">
 					<img src="<?php echo $thumb_src ?>">
 				</div>
 				<div class="message-meta">
-					<div class="message-meta-item"><?php echo get_the_date() ?></div>
+					<div><h1><?php echo get_the_title() ?></h1></div>
+					<span class="message-meta-item"><?php echo get_the_date() ?></span>
 					<?php if ($speaker) : ?>
-					<div class="message-meta-item">by <a href="/speakers/<?php echo $speaker[0]->slug ?>"><?php echo $speaker[0]->name ?></a></div>
+					<span class="message-meta-item"> • <a href="/speakers/<?php echo $speaker[0]->slug ?>"><?php echo $speaker[0]->name ?></a></span>
 					<? endif; ?>
 					<?php if ($series) : ?>
-					<div class="message-meta-item"><span>Series:</span> <a href="/series/<?php echo $series[0]->slug ?>"><?php echo $series[0]->name ?></a></div>
-					<? endif; ?>
+					<span class="message-meta-item"> • <span>Series:</span> <a href="/series/<?php echo $series[0]->slug ?>"><?php echo $series[0]->name ?></a></span>
+					<? endif; 
+
+					if ($podcast && $vimeo_id) : ?>
+						<div class="message-medium-toggle"><button>Audio Only?</button></div>
+					<?php endif;?>
 				</div><?php
 				if ( have_posts() ) : while ( have_posts() ) : the_post();
 					the_content();
@@ -65,9 +61,25 @@ get_header(); ?>
 				else:
 					_e('Sorry, no posts matched your criteria.');
 				endif;
-				if ($podcast && $vimeo_id) : ?>
-				<div><button>Audio Only?</button></div>
-				<?php endif; ?>
+				if ($vimeo_id && $podcast) : ?>
+					<div class="message-player show-video">
+				<?php elseif ($vimeo_id && !$podcast) : ?>
+					<div class="message-player show-video">
+				<?php elseif (!$vimeo_id && $podcast) : ?>
+					<div class="message-player show-audio">
+				<?php endif;
+				if ($vimeo_id) : ?>
+					<div class="embed-vimeo-container"><iframe id="vimeoplayer" src="//player.vimeo.com/video/<?php echo $vimeo_id; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+				<? endif;
+				if ($podcast) :
+					echo wp_audio_shortcode($audio_attrs);
+				endif; ?>
+				</div>
+				<?php the_post_navigation(); ?>
+			</article>
+			<div class="sidebar">
+				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
 			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->

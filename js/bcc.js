@@ -60,6 +60,21 @@ $( document ).ready(function() {
         setWeekCalClickEvent();
     });
 
+    $(".message-medium-toggle").click(function(){
+        if ($(".message-player").hasClass("show-video")){
+            $(".message-player").fadeOut(200, function(){
+                $(".message-player").removeClass("show-video").addClass("show-audio").fadeIn(200);
+            });
+            $(".message-medium-toggle button").html("Watch Video?");
+        }
+        else if($(".message-player").hasClass("show-audio")){
+            $(".message-player").fadeOut(200, function(){
+                $(".message-player").removeClass("show-audio").addClass("show-video").fadeIn(200);
+            });
+            $(".message-medium-toggle button").html("Audio Only?");
+        }
+    })
+
     scaleVideoContainer();
 
     initBannerVideoSize('.video-container .filter');

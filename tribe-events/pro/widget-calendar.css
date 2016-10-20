@@ -63,3 +63,18 @@
 .tribe-this-week-nav-link a, .tribe-this-week-nav-link a:visited{
 	color: #ffffff;
 }
+@media only screen and (max-width: 767px) {
+	.tribe-this-week-widget-horizontal .tribe-this-week-widget-day, .tribe-this-week-widget-horizontal .tribe-this-week-widget-hide-weekends .tribe-this-week-widget-day {
+    	width: 14.28% !important; 
+    }
+    .tribe-this-week-widget-day .date{
+ 	   font-size: 25px;
+	}
+	.tribe-this-week-widget-day .day{
+	    font-size: 6px;
+	}
+	.tribe-this-week-events-widget .tribe-events-page-title{
+		font-size: 14px !important;
+		top: 8px;
+	}
+}
