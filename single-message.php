@@ -36,6 +36,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<div class="articles">
 			<article>
 				<div class="message-archive-link"><a href="/messages/">← Back to Archive</a></div>
 				<div class="message-thumbnail">
@@ -78,6 +79,7 @@ get_header(); ?>
 				</div>
 				<?php the_post_navigation(); ?>
 			</article>
+			</div>
 			<div class="sidebar">
 				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
 			</div>
