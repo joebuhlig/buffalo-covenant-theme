@@ -53,6 +53,8 @@ $( document ).ready(function() {
         $(".main-navigation .menu-main-menu-container a").fadeIn(200);
         $(".main-navigation").removeClass("searching");
         $("#site-navigation").removeClass("toggled");
+        $(".show-bio").removeClass("show-bio");
+        $("#staff-member-bio-container").slideUp(200);
     });
 
     setWeekCalClickEvent();
@@ -72,6 +74,37 @@ $( document ).ready(function() {
                 $(".message-player").removeClass("show-audio").addClass("show-video").fadeIn(200);
             });
             $(".message-medium-toggle button").html("Audio Only?");
+        }
+    })
+
+    $(".staff-member").click(function(e){
+        e.stopPropagation();
+        $staffMember = $(this);
+        $staffGroup = $staffMember.parents(".staff-group");
+        groupWidth = $(".staff-group").innerWidth();
+        memberWidth = $staffMember.outerWidth(true);
+        membersPerLine = Math.floor(groupWidth/memberWidth);
+        currentMember = $staffMember.index();
+        endOfRow = Math.min(Math.ceil(currentMember/membersPerLine) * membersPerLine, $staffGroup.children(".staff-member").length);
+        console.log(groupWidth);
+        console.log(memberWidth);
+        console.log(membersPerLine);
+        console.log(endOfRow);
+        $bioContainer = $("#staff-member-bio-container");
+        $(".show-bio").removeClass("show-bio");
+        if ($bioContainer.is(':visible')){
+            $("#staff-member-bio-container:visible").slideUp(200,function(){
+                $staffMember.addClass("show-bio");
+                $bioContainer.html($staffMember.find(".staff-member-bio").html());
+                $bioContainer.insertAfter($staffGroup.children(".staff-member").eq(endOfRow - 1));
+                $bioContainer.slideDown(200);
+            });    
+        }
+        else {
+            $staffMember.addClass("show-bio");
+            $bioContainer.html($staffMember.find(".staff-member-bio").html());
+            $bioContainer.insertAfter($staffGroup.children(".staff-member").eq(endOfRow - 1));
+            $bioContainer.slideDown(200);
         }
     })
 
