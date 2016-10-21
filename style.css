@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.25
+Version: 1.0.26
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -1076,7 +1076,7 @@ a:active {
 .home .entry-content{
 	text-align: center;
 }
-.entry-content h1, .entry-content h2 {
+.entry-content h1, .entry-content h2, .staff-group h2 {
 	border-bottom: 1px dashed #666666;
 }
 .home .entry-content h1, .home .entry-content h2{
@@ -1607,21 +1607,42 @@ object {
 	cursor: pointer;
 	max-width: 250px;
     min-width: 150px;
+    vertical-align: top;
 }
 .staff-member.show-bio{
 	background-color: #e6e6e6;
-	border-top: 1px solid #cccccc;
-	border-left: 1px solid #cccccc;
-	border-right: 1px solid #cccccc;
-	border-radius: 5px 5px 0px 0px;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
 	padding: 14px;
 }
 .staff-member-pic{
+	position: relative;
 	width: 100%;
+}
+.staff-member-pic:after{
+	content: 'View Bio';
+    position: absolute;
+    width: 100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.4);
+    opacity: 0;
+    transition: all 1s;
+    border-radius: 100%;
+    color: #cccccc;
+    font-weight: lighter;
+    line-height: 14em;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.staff-member-pic:hover:after {
+    opacity: 1;
 }
 .staff-member-pic img{
 	width: 100%;
 	border-radius: 100%;
+	vertical-align: top;
 }
 .staff-member-name{
 	font-size: 1.1em;
@@ -1634,11 +1655,11 @@ object {
 #staff-member-bio-container{
 	display: none;
 	background-color: #e6e6e6;
-	border: 1px solid #cccccc;
 	padding: 20px;
-	margin-top: -2px;
+	margin-top: 10px;
 	border-radius: 5px;
 	text-align: left;
+    box-shadow: inset 0 0 10px -2px;
 }
 .staff-member-bio{
 	display: none;

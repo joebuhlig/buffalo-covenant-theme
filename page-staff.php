@@ -23,8 +23,11 @@ get_header(); ?>
 				// 		get_template_part( 'template-parts/content', 'page' );
 
 				// 	endwhile; // End of the loop.
-
-					$custom_terms = get_terms('staff-roles');
+					$args = array(
+					    'orderby'    => 'ID', 
+					    'order'      => 'ASC',
+					);
+					$custom_terms = get_terms('staff-roles', $args);
 
 					foreach($custom_terms as $custom_term) {
 					    wp_reset_query();
@@ -59,8 +62,7 @@ get_header(); ?>
 					     endif;
 					}
 				?>
-			</div>
-			<div id="staff-member-bio-container">
+				<div id="staff-member-bio-container"></div>
 			</div>
 			<div class="sidebar">
 				<?php dynamic_sidebar( 'pages-sidebar' ); ?>

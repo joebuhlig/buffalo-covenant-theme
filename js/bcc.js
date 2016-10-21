@@ -85,12 +85,11 @@ $( document ).ready(function() {
         memberWidth = $staffMember.outerWidth(true);
         membersPerLine = Math.floor(groupWidth/memberWidth);
         currentMember = $staffMember.index();
-        endOfRow = Math.min(Math.ceil(currentMember/membersPerLine) * membersPerLine, $staffGroup.children(".staff-member").length);
-        console.log(groupWidth);
-        console.log(memberWidth);
-        console.log(membersPerLine);
-        console.log(endOfRow);
         $bioContainer = $("#staff-member-bio-container");
+        if ($staffGroup.find("#staff-member-bio-container").length && ($bioContainer.index() < currentMember)){
+            currentMember = currentMember - 1;
+        }
+        endOfRow = Math.min(Math.ceil(currentMember/membersPerLine) * membersPerLine, $staffGroup.children(".staff-member").not("#staff-member-bio-container").length);
         $(".show-bio").removeClass("show-bio");
         if ($bioContainer.is(':visible')){
             $("#staff-member-bio-container:visible").slideUp(200,function(){
