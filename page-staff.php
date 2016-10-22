@@ -49,7 +49,7 @@ get_header(); ?>
 						        <h2><?php echo $custom_term->name ?></h2>
 
 						        <?php while($loop->have_posts()) : $loop->the_post(); ?>
-						        	<div class="staff-member">
+						        	<div class="staff-member" data-member-id="<?php echo get_the_ID() ?>">
 						        		<div class="staff-member-pic">
 							        		<?php echo get_the_post_thumbnail() ?>
 							        	</div>
@@ -62,7 +62,14 @@ get_header(); ?>
 					     endif;
 					}
 				?>
-				<div id="staff-member-bio-container"></div>
+				<div id="staff-member-bio-container">
+					<div id="staff-member-bio-pointer">
+						<svg class="indicator-arrow" viewBox="0 0 256 60.391">
+							<path class="shape" d="M256,60.391C158.059,60.391,128,0,128,0S97.943,60.391,0,60.391H256z"></path>
+						</svg>
+					</div>
+					<div id="staff-member-bio-text"></div>
+				</div>
 			</div>
 			<div class="sidebar">
 				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
