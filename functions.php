@@ -245,12 +245,23 @@ add_action( 'widgets_init', function(){
 });	
 
 function get_latest_sermon(){
-	$location = 'http://buffalocov.libsyn.com/rss';
-	$xml = simplexml_load_file($location);
-	$title = $xml->channel->item[0]->title;
-	$date = date("F j, Y" ,strtotime($xml->channel->item[0]->pubDate));
-	$link = "/sermons/" . trim(parse_url($xml->channel->item[0]->link, PHP_URL_PATH), '/') . "?autoplay=true";
-	$sermon = '<div class="sermon-player-title"><div class="sermon-player-title-text"><a href="' . $link . '">' . $title . '</a></div><div class="sermon-player-date">' . $date . '</div></div><div class="sermon-player-button"><a href="' . $link . '"><button><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve"><path d="M405.2,232.9L126.8,67.2c-3.4-2-6.9-3.2-10.9-3.2c-10.9,0-19.8,9-19.8,20H96v344h0.1c0,11,8.9,20,19.8,20  c4.1,0,7.5-1.4,11.2-3.4l278.1-165.5c6.6-5.5,10.8-13.8,10.8-23.1C416,246.7,411.8,238.5,405.2,232.9z"/></svg>Play</button></a></div>';
+	$sermons = new WP_Query( array(
+	    'post_type' => 'sermon',
+        'posts_per_page' => 1
+    ) );
+	$speaker = get_the_terms( $sermons->posts[0], 'speakers');
+    $title = $sermons->posts[0]->post_title;
+	$date = date("F j" , strtotime($sermons->posts[0]->post_date));
+	$link = "/sermons/" . $sermons->posts[0]->post_name . "?autoplay=true";
+	$sermon['title'] = $title;
+	$sermon['date'] = $date;
+	$sermon['link'] = $link;
+	if ($speaker){
+		$sermon['speaker'] = $speaker[0]->name;
+	}
+	else {
+		$sermon['speaker'] = null;
+	};
 	return $sermon;
 }
 
