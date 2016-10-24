@@ -18,20 +18,23 @@ $audio_attrs = array(
 }
 $series = get_the_terms( $post, 'series');
 $speaker = get_the_terms( $post, 'speakers');
-$posts_array = get_posts(
-    array(
-        'posts_per_page' => -1,
-        'post_type' => 'attachment',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'series',
-                'field' => 'term_id',
-                'terms' => wp_list_pluck( $series, 'term_id' ),
-            )
-        )
-    )
-);
-$thumb_src = $posts_array[0]->guid;
+
+if ($series) {
+	$posts_array = get_posts(
+	    array(
+	        'posts_per_page' => -1,
+	        'post_type' => 'attachment',
+	        'tax_query' => array(
+	            array(
+	                'taxonomy' => 'series',
+	                'field' => 'term_id',
+	                'terms' => wp_list_pluck( $series, 'term_id' ),
+	            )
+	        )
+	    )
+	);
+	$thumb_src = $posts_array[0]->guid;
+};
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -39,7 +42,11 @@ get_header(); ?>
 			<article>
 				<div class="sermon-archive-link"><a href="/sermons/">← Back to Archive</a></div>
 				<div class="sermon-thumbnail">
-					<img src="<?php echo $thumb_src ?>">
+					<?php if ($series) : ?>
+						<img src="<?php echo $thumb_src ?>">
+					<?php else : ?>
+						<img src="<?php echo get_theme_mod('default_sermon_logo') ?>">
+					<? endif; ?>
 				</div>
 				<div class="sermon-meta">
 					<div><h1><?php echo get_the_title() ?></h1></div>

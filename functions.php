@@ -130,7 +130,7 @@ add_action( 'widgets_init', 'buffalo_covenant_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function buffalo_covenant_theme_scripts() {
-	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.32' );
+	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.33' );
 
 	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '20161011', true);
 
@@ -176,6 +176,10 @@ function bcc_customize_register( $wp_customize ) {
         'title'    => __( 'Header Logos', 'buffalo-covenant-theme' ),
         'priority' => 60
     ) );   
+    $wp_customize->add_section( 'sermon_logo_section_name' , array(
+        'title'    => __( 'Sermon Logo', 'buffalo-covenant-theme' ),
+        'priority' => 70
+    ) ); 
 
     $wp_customize->add_setting( 'header_video_mp4');
     $wp_customize->add_setting( 'header_video_webm');
@@ -184,6 +188,7 @@ function bcc_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'header_mobile_poster');
     $wp_customize->add_setting( 'header_dark_logo');
     $wp_customize->add_setting( 'header_light_logo');
+    $wp_customize->add_setting( 'default_sermon_logo');
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_video_mp4', array(
         'label'    => __( 'Header Video MP4', 'buffalo-covenant-theme' ),
@@ -219,6 +224,11 @@ function bcc_customize_register( $wp_customize ) {
         'label'    => __( 'Header Light Logo', 'buffalo-covenant-theme' ),
         'section'  => 'header_logo_section_name',
         'settings' => 'header_light_logo',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'default_sermon_logo', array(
+        'label'    => __( 'Default Sermon Logo', 'buffalo-covenant-theme' ),
+        'section'  => 'sermon_logo_section_name',
+        'settings' => 'default_sermon_logo',
     ) ) );
 }
 add_action( 'customize_register', 'bcc_customize_register' );
