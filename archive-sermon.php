@@ -30,9 +30,6 @@ get_header(); ?>
 
 			endif; ?>
 			</div>
-			<div class="sidebar">
-				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
-			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

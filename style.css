@@ -1076,6 +1076,13 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+#primary{
+	background-color: #f8f5ec;
+}
+#main{
+	background-color: #ffffff;
+	text-align: center;
+}
 .sticky {
 	display: block;
 }

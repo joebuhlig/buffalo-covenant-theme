@@ -64,18 +64,18 @@ $( document ).ready(function() {
         setWeekCalClickEvent();
     });
 
-    $(".message-medium-toggle").click(function(){
-        if ($(".message-player").hasClass("show-video")){
-            $(".message-player").fadeOut(200, function(){
-                $(".message-player").removeClass("show-video").addClass("show-audio").fadeIn(200);
+    $(".sermon-medium-toggle").click(function(){
+        if ($(".sermon-player").hasClass("show-video")){
+            $(".sermon-player").fadeOut(200, function(){
+                $(".sermon-player").removeClass("show-video").addClass("show-audio").fadeIn(200);
             });
-            $(".message-medium-toggle button").html("Watch Video?");
+            $(".sermon-medium-toggle button").html("Watch Video?");
         }
-        else if($(".message-player").hasClass("show-audio")){
-            $(".message-player").fadeOut(200, function(){
-                $(".message-player").removeClass("show-audio").addClass("show-video").fadeIn(200);
+        else if($(".sermon-player").hasClass("show-audio")){
+            $(".sermon-player").fadeOut(200, function(){
+                $(".sermon-player").removeClass("show-audio").addClass("show-video").fadeIn(200);
             });
-            $(".message-medium-toggle button").html("Audio Only?");
+            $(".sermon-medium-toggle button").html("Audio Only?");
         }
     })
 

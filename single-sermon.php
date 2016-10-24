@@ -82,9 +82,6 @@ get_header(); ?>
 				<?php the_post_navigation(); ?>
 			</article>
 			</div>
-			<div class="sidebar">
-				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
-			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
