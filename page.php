@@ -29,12 +29,6 @@ get_header(); ?>
 
 			endwhile; // End of the loop.
 			?>
-			<?php
-			if ( !is_front_page() ) : ?>
-			<div class="sidebar" style="display: none;">
-				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
-			</div>
-			<?php endif ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

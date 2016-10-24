@@ -938,8 +938,11 @@ a:active {
 
 .site-main {
 	width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0px auto;
+}
+.home .site-main{
+	max-width: 1100px;
 }
 
 .site-main .comment-navigation,
@@ -1081,11 +1084,14 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+#content{
+    background-color: #f8f5ec;
+}
 #primary{
-	background-color: #f8f5ec;
+	background-color: #ffffff;
+	margin: 0px 40px;
 }
 #main{
-	background-color: #ffffff;
 	text-align: center;
 }
 .sticky {
@@ -1726,6 +1732,10 @@ object {
 	box-shadow: 0 0px 10px 2px rgba(0, 0, 0, 0.25);
 }
 
+.tml{
+    margin: 0px auto;
+}
+
 @media screen and (min-width: 56em) {
 	.menu-toggle {
 		display: none;
@@ -1742,6 +1752,7 @@ object {
 }
 @media screen and (max-width: 56em){
 	article{
+		padding: 10px;
 		width:100%;
 	}
 	.articles{
@@ -1759,4 +1770,10 @@ object {
 	.featured-event-image{
 		max-height: none;
 	}
+	#primary{
+		margin: 0px 20px;
+	}
+}
+@media screen and (max-width: 600px){
+
 }
