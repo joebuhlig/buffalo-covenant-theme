@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single message posts.
+ * The template for displaying all single sermon posts.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -38,22 +38,22 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<div class="articles">
 			<article>
-				<div class="message-archive-link"><a href="/messages/">← Back to Archive</a></div>
-				<div class="message-thumbnail">
+				<div class="sermon-archive-link"><a href="/sermons/">← Back to Archive</a></div>
+				<div class="sermon-thumbnail">
 					<img src="<?php echo $thumb_src ?>">
 				</div>
-				<div class="message-meta">
+				<div class="sermon-meta">
 					<div><h1><?php echo get_the_title() ?></h1></div>
-					<span class="message-meta-item"><?php echo get_the_date() ?></span>
+					<span class="sermon-meta-item"><?php echo get_the_date() ?></span>
 					<?php if ($speaker) : ?>
-					<span class="message-meta-item"> • <a href="/speakers/<?php echo $speaker[0]->slug ?>"><?php echo $speaker[0]->name ?></a></span>
+					<span class="sermon-meta-item"> • <a href="/speakers/<?php echo $speaker[0]->slug ?>"><?php echo $speaker[0]->name ?></a></span>
 					<? endif; ?>
 					<?php if ($series) : ?>
-					<span class="message-meta-item"> • <span>Series:</span> <a href="/series/<?php echo $series[0]->slug ?>"><?php echo $series[0]->name ?></a></span>
+					<span class="sermon-meta-item"> • <span>Series:</span> <a href="/series/<?php echo $series[0]->slug ?>"><?php echo $series[0]->name ?></a></span>
 					<? endif; 
 
 					if ($podcast && $vimeo_id) : ?>
-						<div class="message-medium-toggle"><button>Audio Only?</button></div>
+						<div class="sermon-medium-toggle"><button>Audio Only?</button></div>
 					<?php endif;?>
 				</div><?php
 				if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -63,11 +63,11 @@ get_header(); ?>
 					_e('Sorry, no posts matched your criteria.');
 				endif;
 				if ($vimeo_id && $podcast) : ?>
-					<div class="message-player show-video">
+					<div class="sermon-player show-video">
 				<?php elseif ($vimeo_id && !$podcast) : ?>
-					<div class="message-player show-video">
+					<div class="sermon-player show-video">
 				<?php elseif (!$vimeo_id && $podcast) : ?>
-					<div class="message-player show-audio">
+					<div class="sermon-player show-audio">
 				<?php endif;
 				if ($vimeo_id) : ?>
 					<div class="embed-vimeo-container"><iframe id="vimeoplayer" src="//player.vimeo.com/video/<?php echo $vimeo_id; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

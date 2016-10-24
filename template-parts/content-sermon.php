@@ -16,23 +16,23 @@
 		    )
 		);
 		$thumb_src = $posts_array[0]->guid;?>
-	<div class="message-thumbnail">
+	<div class="sermon-thumbnail">
 		<img src="<?php echo $thumb_src ?>">
 	</div>
-	<div class="message-details"><?php
+	<div class="sermon-details"><?php
 	if ( is_single() ) :
 		the_title( '<h1 class="entry-title">', '</h1>' );
 	else :
 		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 	endif;
 	?>
-		<div class="message-meta">
-			<span class="message-meta-item"><?php echo get_the_date() ?></span>
+		<div class="sermon-meta">
+			<span class="sermon-meta-item"><?php echo get_the_date() ?></span>
 			<?php if ($speaker) : ?>
-			<span class="message-meta-item"> • <a href="/speakers/<?php echo $speaker[0]->slug ?>"><?php echo $speaker[0]->name ?></a></span>
+			<span class="sermon-meta-item"> • <a href="/speakers/<?php echo $speaker[0]->slug ?>"><?php echo $speaker[0]->name ?></a></span>
 			<? endif; ?>
 			<?php if ($series) : ?>
-			<span class="message-meta-item"> • <span>Series:</span> <a href="/series/<?php echo $series[0]->slug ?>"><?php echo $series[0]->name ?></a></span>
+			<span class="sermon-meta-item"> • <span>Series:</span> <a href="/series/<?php echo $series[0]->slug ?>"><?php echo $series[0]->name ?></a></span>
 			<? endif; ?>
 		</div>
 
