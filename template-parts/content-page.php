@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="text-align: left; background-color: #ffffff; width:100%; padding: 30px;">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 	</header><!-- .entry-header -->
 
