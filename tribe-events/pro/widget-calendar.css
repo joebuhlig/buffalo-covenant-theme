@@ -53,11 +53,11 @@
     color: #b9b9b9;
 }
 .tribe-this-week-widget-day.this-week-today .tribe-this-week-widget-header-date{
-	background-color: #254c5a;
-	color: #ffffff;
+	background-color: #f8f5ec;
+	color: #144c5b;
 }
 .entry-content ul.tribe-events-sub-nav, .tribe-events-sub-nav{
-	background-color: #254c5a;
+	background-color: #144c5b;
 	margin: 0px !important;
 }
 .tribe-this-week-nav-link a, .tribe-this-week-nav-link a:visited{
