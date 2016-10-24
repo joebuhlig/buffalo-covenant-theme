@@ -48,13 +48,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: sans-serif;
+	font-family: "Myriad Pro", Myriad, myriad-pro, Helvetica, Arial, sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
 
 body {
 	margin: 0;
+	font-family: "Myriad Pro", Myriad, myriad-pro, Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
 }
 html,body{
 	min-height: 100%;
@@ -81,7 +84,6 @@ footer {
 	width: 100%;
 	text-align: center;
 	font-size: 12px;
-	font-family: Helvetica;
 	padding-top: 20px;
 }
 audio,
@@ -282,7 +284,6 @@ input,
 select,
 textarea {
 	color: #4d4d4d;
-	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -296,6 +297,32 @@ h5,
 h6 {
 	clear: both;
 	font-weight: lighter;
+}
+h1, h2 {
+	color: #144c5b;
+}
+h3, h4 {
+	color: #4d4d4d;
+	font-weight: bold;
+}
+
+h1{
+	font-size: 48px;
+}
+h2{
+	font-size: 30px;
+}
+h3{
+	font-size: 24px;
+}
+h4{
+	font-size: 20px;
+}
+h5{
+	font-size: 18px
+};
+h6{
+	font-size: 16px;
 }
 
 p {
@@ -441,11 +468,11 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     border: 1px solid;
-    border-color: #254c5a;
+    border-color: #144c5b;
     border-radius: 0px;
     background: transparent;
     box-shadow: none;
-    color: #254c5a;
+    color: #144c5b;
     font-size: 12px;
     font-size: 1rem;
     line-height: 1.1;
@@ -527,11 +554,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #254c5a;
+	color: #144c5b;
 }
 
 a:visited {
-	color: #254c5a;
+	color: #144c5b;
 }
 
 a:hover,
@@ -637,7 +664,6 @@ a:active {
 .main-navigation a {
 	display: block;
     text-decoration: none;
-    font-family: Helvetica;
     font-weight: lighter;
     margin: 0px 17px;
     padding-bottom: 10px;
@@ -666,7 +692,7 @@ a:active {
     transition: all 0.5s ease;
 }*/
 .back-page .main-navigation.scrolled.toggled a {
-	color: #254c5a;
+	color: #144c5b;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -683,7 +709,7 @@ a:active {
 	background-color: #ffffff;
 }
 .main-navigation ul ul li>a {
-	color: #254c5a !important;
+	color: #144c5b !important;
     margin: 10px 15px;
     border-bottom: 1px dashed #666;
     width: auto;
@@ -801,7 +827,7 @@ a:active {
     padding: 10px 0px 0px 0px;
 }
 .main-navigation.toggled li a{
-	color: #254c5a;
+	color: #144c5b;
 }
 .main-navigation.toggled .menu-main-menu-container>ul, .main-navigation.toggled .menu-mobile-menu-container>ul{
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -835,19 +861,19 @@ a:active {
 .main-navigation.toggled #search-menu-item-form .search-field{
 	background-color: #ffffff;
 	padding: 5px 20px;
-	color: #254c5a;
+	color: #144c5b;
 }
 .main-navigation.toggled ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #254c5a;
+  color: #144c5b;
 }
 .main-navigation.toggled ::-moz-placeholder { /* Firefox 19+ */
-  color: #254c5a;
+  color: #144c5b;
 }
 .main-navigation.toggled :-ms-input-placeholder { /* IE 10+ */
-  color: #254c5a;
+  color: #144c5b;
 }
 .main-navigation.toggled :-moz-placeholder { /* Firefox 18- */
-  color: #254c5a;
+  color: #144c5b;
 }
 .menu-toggle{
 	float:right;
@@ -875,7 +901,7 @@ a:active {
     transition: all 0.5s ease;
 }
 .main-navigation.scrolled .menu-toggle svg{
-	/*fill: #254c5a;*/
+	/*fill: #144c5b;*/
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -885,22 +911,22 @@ a:active {
 	fill: #ffffff;
 }
 .main-navigation.scrolled #search-menu-item svg{
-	/*fill:#254c5a;*/
+	/*fill:#144c5b;*/
 }
 .main-navigation.scrolled #search-menu-item-form .search-field {
-    color: #254c5a;
+    color: #144c5b;
 }
 /*.main-navigation.scrolled ::-webkit-input-placeholder {
-  color: #254c5a;
+  color: #144c5b;
 }
 .main-navigation.scrolled ::-moz-placeholder {
-  color: #254c5a;
+  color: #144c5b;
 }
 .main-navigation.scrolled :-ms-input-placeholder {
-  color: #254c5a;
+  color: #144c5b;
 }
 .main-navigation.scrolled :-moz-placeholder {
-  color: #254c5a;
+  color: #144c5b;
 }*/
 .non-mobile{
 	display: none;
@@ -1055,7 +1081,10 @@ a:active {
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	/*margin: 0 0 1.5em;*/
+}
+.entry-title{
+	color:#ffffff;
 }
 
 .byline,
@@ -1076,12 +1105,7 @@ a:active {
 .home .entry-content{
 	text-align: center;
 }
-.entry-content h1, .entry-content h2, .staff-group h2 {
-	border-bottom: 1px dashed #666666;
-}
-.home .entry-content h1, .home .entry-content h2{
-	border-bottom: 0px;
-}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -1097,7 +1121,6 @@ a:active {
     text-align: center;
     width: 100%;
     color: #ffffff;
-    font-family: Helvetica;
     font-weight: lighter;
     line-height: 1;
 }
@@ -1361,7 +1384,6 @@ object {
     bottom: 65px;
     color: #fff;
     font-weight: lighter;
-    font-family: Helvetica;
     padding: 5px 20px;
     background-color: rgba(230,230,230,0.4);
 }
@@ -1467,17 +1489,6 @@ object {
     font-size: 0.9rem;
     font-weight: bold;
 }
-.sermon {
-    margin: 0px;
-    font-size: 0.8em;
-    border-top: 1px dashed #666;
-    padding: 15px 0px;
-}
-.sermon a {
-    color: #254c5a;
-    font-size: 1.2em;
-    text-decoration: none;
-}
 .featured-sidebar{
     width: 100%;
     text-align: center;
@@ -1527,60 +1538,60 @@ object {
     width: calc(70% - 20px);
     padding: 1.5em 10px 0px 10px;
 }
-.message-thumbnail{
+.sermon-thumbnail{
 	max-width: 120px;
 	display: inline-block;
 }
-.message-details{
+.sermon-details{
 	display: inline-block;
 	margin: 0px 15px;
 	vertical-align: top;
     max-width: calc(100% - 160px);
 }
-.message-details .entry-title {
+.sermon-details .entry-title {
     margin: 0px;
 }
-.message-details .entry-content{
+.sermon-details .entry-content{
 	margin: 0px;
 }
-.message-meta{
+.sermon-meta{
 	font-size: 0.85em;
 }
-.single-message article{
+.single-sermon article{
 	margin-top: 1.5em;
 }
-.single-message .message-thumbnail{
+.single-sermon .sermon-thumbnail{
 	max-width: 130px;
 	margin-right: 10px;
 	display: inline-block;
 }
-.single-message .message-thumbnail img{
+.single-sermon .sermon-thumbnail img{
 	max-height: 100%;
 }
-.single-message .message-meta{
+.single-sermon .sermon-meta{
     display: inline-block;
     font-size: 0.9em;
     vertical-align: top;
 }
-.single-message .message-meta h1{
+.single-sermon .sermon-meta h1{
 	margin: 0px;
 }
-.single-message .message-medium-toggle{
+.single-sermon .sermon-medium-toggle{
 	margin-top: 15px;
 }
-.single-message .message-player{
+.single-sermon .sermon-player{
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.single-message .message-player.show-video .wp-audio-shortcode{
+.single-sermon .sermon-player.show-video .wp-audio-shortcode{
 	display: none;
 }
-.single-message .message-player.show-audio .embed-vimeo-container{
+.single-sermon .sermon-player.show-audio .embed-vimeo-container{
 	display: none;
 }
-.single-message .message-archive-link{
+.single-sermon .sermon-archive-link{
 	margin-bottom: 15px;
 }
 .embed-vimeo-container {
@@ -1646,6 +1657,9 @@ object {
 }
 .staff-member-pic:hover:after {
     opacity: 1;
+}
+.staff-member.show-bio .staff-member-pic:hover:after {
+    opacity: 0;
 }
 .staff-member-pic img{
 	width: 100%;
