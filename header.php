@@ -17,6 +17,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+<script src="https://use.typekit.net/udh7lbz.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
 <body <?php if ( is_front_page() ){ body_class(); } else { body_class("back-page"); } ?>>
