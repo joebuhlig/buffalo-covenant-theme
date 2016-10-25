@@ -61,15 +61,7 @@ get_header(); ?>
 					if ($podcast && $vimeo_id) : ?>
 						<div class="sermon-medium-toggle"><button>Audio Only?</button></div>
 					<?php endif;?>
-				</div>
-				<div class="sermon-description"><?php
-				if ( have_posts() ) : while ( have_posts() ) : the_post();
-					the_content();
-					endwhile;
-				else:
-					_e('Sorry, no posts matched your criteria.');
-				endif;
-				?></div><?php
+				</div><?php
 				if ($vimeo_id && $podcast) : ?>
 					<div class="sermon-player show-video">
 				<?php elseif ($vimeo_id && !$podcast) : ?>

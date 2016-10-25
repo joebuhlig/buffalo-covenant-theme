@@ -1558,14 +1558,17 @@ object {
 .widget-title{
 	font-size: 1.2em;
 }
-.articles{
-    display: inline-block;
-    width: calc(70% - 20px);
-    padding: 1.5em 10px 0px 10px;
+.post-type-archive-sermon #main{
+	max-width: 1000px;
+}
+.post-type-archive-sermon .clear{
+	border-bottom: 1px solid #ccc;
 }
 .archive .sermon{
 	padding: 10px;
-	border-top: 1px solid #e6e6e6;
+	display: inline-block;
+	vertical-align: top;
+	max-width: 250px;
 }
 .pre-sermon-list{
 	clear: both;
@@ -1583,6 +1586,18 @@ object {
     float: right;
     margin: 25px 0px;
 }
+.sermon-details .entry-title {
+    margin: 0px 0px 10px 0px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.sermon-details .entry-content{
+	margin: 0px;
+}
+.sermon-meta{
+	font-size: 0.85em;
+	text-align: left;
+}
 @media screen and (max-width: 56em){
 	.pre-sermon-list .sermon-list-search{
 	    float: none;
@@ -1598,26 +1613,29 @@ object {
 	    width: 100%;
 	    text-align: center;
 	}
-}
-.sermon-thumbnail{
-	max-width: 120px;
-	display: inline-block;
-}
-.sermon-details{
-	display: inline-block;
-	margin: 0px 15px;
-	vertical-align: top;
-    max-width: calc(100% - 160px);
-}
-.sermon-details .entry-title {
-    margin: 0px;
-}
-.sermon-details .entry-content{
-	margin: 0px;
-}
-.sermon-meta{
-	font-size: 0.85em;
-	text-align: left;
+	.archive .sermon{
+		max-width: none;
+		border-top: 1px solid #e6e6e6;
+	}
+	.post-type-archive-sermon .clear{
+		border-bottom: 0px;
+	}
+	.sermon-thumbnail{
+		display: inline-block;
+		max-width: 25%;
+		vertical-align: top;
+	}
+	.sermon-details{
+		display: inline-block;
+	    max-width: calc(75% - 4px);
+		vertical-align: top;
+		padding: 0px 10px;
+	}
+	.sermon-details .entry-title {
+	    margin: 0px;
+	    font-size: 18px;
+	    text-transform: uppercase;
+	}
 }
 .single-sermon article{
 	text-align: center;

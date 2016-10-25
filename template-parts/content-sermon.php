@@ -19,11 +19,13 @@
 			$thumb_src = $posts_array[0]->guid;
 		};?>
 	<div class="sermon-thumbnail">
+		<a href="<?php echo esc_url( get_permalink() ) ?>">
 		<?php if ($series) : ?>
 			<img src="<?php echo $thumb_src ?>">
 		<?php else : ?>
 			<img src="<?php echo get_theme_mod('default_sermon_logo') ?>">
 		<? endif; ?>
+		</a>
 	</div>
 	<div class="sermon-details"><?php
 	if ( is_single() ) :
@@ -33,28 +35,14 @@
 	endif;
 	?>
 		<div class="sermon-meta">
-			<span class="sermon-meta-item"><?php echo get_the_date() ?></span>
+			<div class="sermon-meta-item"><?php echo get_the_date() ?></div>
 			<?php if ($speaker) : ?>
-			<span class="sermon-meta-item"> • <a href="/speakers/<?php echo $speaker[0]->slug ?>"><?php echo $speaker[0]->name ?></a></span>
+			<div class="sermon-meta-item">by <a href="/speakers/<?php echo $speaker[0]->slug ?>"><?php echo $speaker[0]->name ?></a></div>
 			<? endif; ?>
 			<?php if ($series) : ?>
-			<span class="sermon-meta-item"> • <span>Series:</span> <a href="/series/<?php echo $series[0]->slug ?>"><?php echo $series[0]->name ?></a></span>
+			<div class="sermon-meta-item"><span>Series:</span> <a href="/series/<?php echo $series[0]->slug ?>"><?php echo $series[0]->name ?></a></div>
 			<? endif; ?>
 		</div>
-
-		<div class="entry-content">
-			<?php
-				// the_content( sprintf(
-				// 	wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'buffalo-covenant-theme' ), array( 'span' => array( 'class' => array() ) ) ),
-				// 	the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				// ) );
-
-				// wp_link_pages( array(
-				// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'buffalo-covenant-theme' ),
-				// 	'after'  => '</div>',
-				// ) );
-			?>
-		</div><!-- .entry-content -->
 	</div>
 
 	<?php if ( get_edit_post_link() ) : ?>
