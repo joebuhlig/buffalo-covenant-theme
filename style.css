@@ -1567,6 +1567,38 @@ object {
 	padding: 10px;
 	border-top: 1px solid #e6e6e6;
 }
+.pre-sermon-list{
+	clear: both;
+}
+.pre-sermon-list .sermon-list-search{
+    float: left;
+    margin: 25px 0px;
+}
+.pre-sermon-list .sermon-list-search .search-field{
+    margin: -1px 10px 0px 0px;
+    height: 33px;
+    width: 250px;
+}
+.pre-sermon-list .subscribe-buttons{
+    float: right;
+    margin: 25px 0px;
+}
+@media screen and (max-width: 56em){
+	.pre-sermon-list .sermon-list-search{
+	    float: none;
+	    margin: 0px;
+	    padding: 25px 0px;
+	    width: 100%;
+	    text-align: center;
+	}
+	.pre-sermon-list .subscribe-buttons{
+	    float: none;
+	    margin: 0px;
+	    padding: 25px 0px;
+	    width: 100%;
+	    text-align: center;
+	}
+}
 .sermon-thumbnail{
 	max-width: 120px;
 	display: inline-block;
