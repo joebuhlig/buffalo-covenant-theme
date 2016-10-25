@@ -300,6 +300,14 @@ function add_search_nav_item($items) {
 }
 add_filter('wp_nav_menu_items','add_search_nav_item');
 
+function custom_tribe_events_get_this_week_title( $start_date ) {
+	$this_week_title = sprintf( __( 'Week of %s', 'tribe-events-calendar-pro' ),
+		date_i18n( "M j", strtotime( $start_date ) )
+	);
+
+	return $this_week_title;
+}
+
 /**
  * Adds My_Widget widget.
  */
