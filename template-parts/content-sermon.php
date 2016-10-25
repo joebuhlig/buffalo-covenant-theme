@@ -20,7 +20,9 @@
 		};?>
 	<div class="sermon-thumbnail">
 		<a href="<?php echo esc_url( get_permalink() ) ?>">
-		<?php if ($series) : ?>
+		<?php if (has_post_thumbnail()) :
+			echo get_the_post_thumbnail();
+		elseif ($series) : ?>
 			<img src="<?php echo $thumb_src ?>">
 		<?php else : ?>
 			<img src="<?php echo get_theme_mod('default_sermon_logo') ?>">

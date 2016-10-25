@@ -84,20 +84,22 @@
 				</div>
 			<?php else : ?>
 				<div class="poster page">
-					<?php if (has_post_thumbnail()) : ?>
+					<?php if (!is_post_type_archive() && !is_tax() && has_post_thumbnail()) : ?>
 						<?php echo get_the_post_thumbnail() ?>
 					<? else : ?>
 			            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
 			        <?php endif; ?>
 			        <header class="entry-header">
-						<?php if ( !is_front_page() && !is_post_type_archive() && !is_tax() ) :
+			        <?php if (!get_post_meta( $post->ID, 'hide_page_title', true )) :
+						if ( !is_front_page() && !is_post_type_archive() && !is_tax() ) :
 							the_title( '<h1 class="entry-title">', '</h1>' ); 
 						elseif (is_post_type_archive() && !is_tax()) :
 							?><h1 class="entry-title"><?php echo post_type_archive_title(); ?></h1><?php
 						elseif (is_tax()) :
 							$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 							?><h1 class="entry-title"><?php echo $term->name; ?></h1><?php
-						endif; ?>
+						endif;
+					endif;?>
 					</header>
 		        </div>
 			<?php
