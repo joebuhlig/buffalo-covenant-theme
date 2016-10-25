@@ -82,11 +82,10 @@ $( document ).ready(function() {
     $(".staff-member").click(function(e){
         e.stopPropagation();
         $staffMember = $(this);
-        $staffGroup = $staffMember.parents(".staff-group");
-        groupWidth = $(".staff-group").innerWidth();
+        groupWidth = $("#main").innerWidth();
         memberWidth = $staffMember.outerWidth(true);
         membersPerLine = Math.floor(groupWidth/memberWidth);
-        currentMember = $staffMember.index();
+        currentMember = $staffMember.index() + 1;
         $bioContainer = $("#staff-member-bio-container");
         if ($staffMember.attr("data-member-id") == $bioContainer.attr("data-member-id")){
             $("body").removeClass("bio-open");
@@ -95,21 +94,20 @@ $( document ).ready(function() {
             $bioContainer.slideUp(200);
             return;
         }
-        if ($staffGroup.find("#staff-member-bio-container").length && ($bioContainer.index() < currentMember)){
+        if ($bioContainer.index() < currentMember){
             currentMember = currentMember - 1;
         }
-        endOfRow = Math.min(Math.ceil(currentMember/membersPerLine) * membersPerLine, $staffGroup.children(".staff-member").not("#staff-member-bio-container").length);
+        endOfRow = Math.min(Math.ceil(currentMember/membersPerLine) * membersPerLine, $(".staff-member").length);
         $("body").addClass("bio-open");
         $(".show-bio").removeClass("show-bio");
-        pointerPosition = ($staffMember.position().left + 10) + $("#staff-member-bio-pointer").width()/2;
-        pointerPosition = $staffMember.position().left + memberWidth/2 - 30 - $("#staff-member-bio-pointer").width()/2 - ($("#primary").width() - $("#main").width())/2;
+        pointerPosition = $staffMember.position().left - 20 + memberWidth/2 - $("#staff-member-bio-pointer").width()/2 - ($("#main").outerWidth(true) - $("#main").width())/2 - ($("#primary").outerWidth(true) - $("#main").outerWidth(true))/2;
         if ($bioContainer.is(':visible')){
             $("#staff-member-bio-container:visible").slideUp(200,function(){
                 $staffMember.addClass("show-bio");
                 $("#staff-member-bio-text").html($staffMember.find(".staff-member-bio").html());
                 $("#staff-member-bio-pointer").css("left", pointerPosition);
                 $bioContainer.attr("data-member-id", $staffMember.attr("data-member-id"));
-                $bioContainer.insertAfter($staffGroup.children(".staff-member").eq(endOfRow - 1));
+                $bioContainer.insertAfter($(".staff-member").eq(endOfRow - 1));
                 $bioContainer.slideDown(200);
             });    
         }
@@ -118,7 +116,7 @@ $( document ).ready(function() {
             $("#staff-member-bio-text").html($staffMember.find(".staff-member-bio").html());
             $("#staff-member-bio-pointer").css("left", pointerPosition);
             $bioContainer.attr("data-member-id", $staffMember.attr("data-member-id"));
-            $bioContainer.insertAfter($staffGroup.children(".staff-member").eq(endOfRow - 1));
+            $bioContainer.insertAfter($(".staff-member").eq(endOfRow - 1));
             $bioContainer.slideDown(200);
         }
     })
