@@ -26,6 +26,7 @@ get_header(); ?>
 		    $args = array('post_type' => 'staff',
 		        'order' => 'ASC',
 		        'orderby' => 'menu_order',
+		        'posts_per_page' => 1000
 		     );
 
 		     $loop = new WP_Query($args);
