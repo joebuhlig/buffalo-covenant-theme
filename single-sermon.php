@@ -35,6 +35,8 @@ if ($series) {
 	);
 	$thumb_src = $posts_array[0]->guid;
 };
+$show_default_header = true;
+$hide_page_title = true;
 get_header(); ?>
 
 	<div id="primary" class="content-area">

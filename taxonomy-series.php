@@ -6,7 +6,9 @@
  *
  * @package Buffalo_Covenant_Theme
  */
-
+$show_default_header = true;
+$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+$page_title = $term->name;
 get_header(); ?>
 
 	<div id="primary" class="content-area">

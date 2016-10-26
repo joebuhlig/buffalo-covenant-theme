@@ -8,7 +8,9 @@
  *
  * @package Buffalo_Covenant_Theme
  */
-
+global $show_default_header;
+global $hide_page_title;
+global $page_title;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -84,21 +86,18 @@
 				</div>
 			<?php else : ?>
 				<div class="poster page">
-					<?php if (!is_post_type_archive() && !is_tax() && has_post_thumbnail()) : ?>
-						<?php echo get_the_post_thumbnail() ?>
-					<? else : ?>
-			            <img src="<?php echo get_theme_mod('default_page_header') ?>" alt="">
-			        <?php endif; ?>
+					<?php if ($show_default_header || !has_post_thumbnail()) : ?>
+						<img src="<?php echo get_theme_mod('default_page_header') ?>" alt="">
+					<?php else :
+						echo get_the_post_thumbnail();
+			        endif; ?>
 			        <header class="entry-header">
-			        <?php if (!get_post_meta( $post->ID, 'hide_page_title', true )) :
-						if ( !is_front_page() && !is_post_type_archive() && !is_tax() ) :
-							the_title( '<h1 class="entry-title">', '</h1>' ); 
-						elseif (is_post_type_archive() && !is_tax()) :
-							?><h1 class="entry-title"><?php echo post_type_archive_title(); ?></h1><?php
-						elseif (is_tax()) :
-							$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-							?><h1 class="entry-title"><?php echo $term->name; ?></h1><?php
-						endif;
+			        <?php if (!$hide_page_title && !get_post_meta( $post->ID, 'hide_page_title', true )) : ?>
+			        	<?php if ($page_title) : ?>
+			        		<h1 class="entry-title"><?php echo $page_title; ?></h1>
+			        	<?php else : ?>
+				        	<h1 class="entry-title"><?php echo wp_title(""); ?></h1><?php
+				        endif;
 					endif;?>
 					</header>
 		        </div>
