@@ -440,6 +440,16 @@ class Home_Title_Widget extends WP_Widget {
 	}
 } // class My_Widget
 
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+global $post;
+if ( isset( $post ) ) {
+$classes[] = $post->post_type . '-' . $post->post_name;
+}
+return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );
+
 function custom_tribe_events_this_week_previous_link( $start_date, $text = '' ) {
 
 	if ( empty( $text ) ) {
