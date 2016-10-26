@@ -130,7 +130,7 @@ add_action( 'widgets_init', 'buffalo_covenant_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function buffalo_covenant_theme_scripts() {
-	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.36' );
+	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.38' );
 
 	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '20161011', true);
 
@@ -171,6 +171,10 @@ function bcc_customize_register( $wp_customize ) {
    $wp_customize->add_section( 'header_video_section_name' , array(
         'title'    => __( 'Header Video', 'buffalo-covenant-theme' ),
         'priority' => 50
+    ) );   
+    $wp_customize->add_section( 'default_page_header_section_name' , array(
+        'title'    => __( 'Default Page Header', 'buffalo-covenant-theme' ),
+        'priority' => 55
     ) );  
     $wp_customize->add_section( 'header_logo_section_name' , array(
         'title'    => __( 'Header Logos', 'buffalo-covenant-theme' ),
@@ -186,6 +190,7 @@ function bcc_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'header_video_ogv');
     $wp_customize->add_setting( 'header_video_poster');
     $wp_customize->add_setting( 'header_mobile_poster');
+    $wp_customize->add_setting( 'default_page_header');
     $wp_customize->add_setting( 'header_dark_logo');
     $wp_customize->add_setting( 'header_light_logo');
     $wp_customize->add_setting( 'default_sermon_logo');
@@ -214,6 +219,11 @@ function bcc_customize_register( $wp_customize ) {
         'label'    => __( 'Header Mobile Poster', 'buffalo-covenant-theme' ),
         'section'  => 'header_video_section_name',
         'settings' => 'header_mobile_poster',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'default_page_header', array(
+        'label'    => __( 'Default Page Header', 'buffalo-covenant-theme' ),
+        'section'  => 'default_page_header_section_name',
+        'settings' => 'default_page_header',
     ) ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_dark_logo', array(
         'label'    => __( 'Header Dark Logo', 'buffalo-covenant-theme' ),
@@ -302,7 +312,7 @@ add_filter('wp_nav_menu_items','add_search_nav_item');
 
 function custom_tribe_events_get_this_week_title( $start_date ) {
 	$this_week_title = sprintf( __( 'Week of %s', 'tribe-events-calendar-pro' ),
-		date_i18n( "M j", strtotime( $start_date ) )
+		date_i18n( "F j", strtotime( $start_date ) )
 	);
 
 	return $this_week_title;

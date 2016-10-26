@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.37
+Version: 1.0.38
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -938,7 +938,7 @@ a:active {
 
 .site-main {
 	width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0px auto;
 }
 .home .site-main{
@@ -1089,7 +1089,7 @@ a:active {
 }
 #primary{
 	background-color: #ffffff;
-	margin: 0px 40px;
+	margin: 0px 80px;
 }
 #main{
 	text-align: center;
@@ -1368,6 +1368,8 @@ object {
 .site-header .poster.page img{
     position: absolute;
     bottom: 0px;
+    max-width: none;
+    right: 0px;
 }
 .site-header .poster.page header{
     top: calc(66% - 72px);
@@ -1399,7 +1401,7 @@ object {
 }
 .sermon-player-wrapper{
     position: relative;
-    bottom: 65px;
+    bottom: 70px;
     color: #fff;
     font-weight: lighter;
     padding: 5px 20px;
@@ -1416,7 +1418,7 @@ object {
 }
 .sermon-player-latest{
 	display: inline-block;
-    width: 140px;
+    width: 150px;
     border-right: 1px solid #a0a0a0;
     padding: 4px 10px;
     height: 100%;
@@ -1425,6 +1427,7 @@ object {
 }
 .sermon-player-latest-text{
 	color:#144c5b;
+	font-weight: bold;
 	text-transform: uppercase;
 }
 .sermon-player-date{
@@ -1436,12 +1439,13 @@ object {
 	padding: 6px 10px;
 	height: 100%;
 	vertical-align: top;
-	max-width: calc(100% - 250px);
+	max-width: calc(100% - 270px);
 }
 .sermon-player-title-text{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    font-size: 1.1em;
 }
 .sermon-player-title-text a {
 	color: #ffffff;
@@ -1465,7 +1469,7 @@ object {
 }
 @media screen and (max-width: 600px){
 	.sermon-player-wrapper{
-		bottom: 59px;
+		bottom: 70px;
 		padding: 5px 0px;
 	}
 	.sermon-player{

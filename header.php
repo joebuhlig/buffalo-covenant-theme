@@ -87,7 +87,7 @@
 					<?php if (!is_post_type_archive() && !is_tax() && has_post_thumbnail()) : ?>
 						<?php echo get_the_post_thumbnail() ?>
 					<? else : ?>
-			            <img src="<?php echo get_theme_mod('header_video_poster') ?>" alt="">
+			            <img src="<?php echo get_theme_mod('default_page_header') ?>" alt="">
 			        <?php endif; ?>
 			        <header class="entry-header">
 			        <?php if (!get_post_meta( $post->ID, 'hide_page_title', true )) :
