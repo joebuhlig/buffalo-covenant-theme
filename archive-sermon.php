@@ -6,7 +6,7 @@
  *
  * @package Buffalo_Covenant_Theme
  */
-
+$show_default_header = true;
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -20,13 +20,9 @@ get_header(); ?>
 			</div>
 			<div class="clear"></div>
 			<?php
-			wp_reset_query();
-		    $args = array('post_type' => 'sermon');
-
-		     $loop = new WP_Query($args);
-			if ( $loop->have_posts() ) : 
+			if ( have_posts() ) : 
 				/* Start the Loop */
-				while ( $loop->have_posts() ) : $loop->the_post();
+				while ( have_posts() ) : the_post();
 					get_template_part( 'template-parts/content', 'sermon' );
 
 				endwhile;
