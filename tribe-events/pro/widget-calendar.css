@@ -19,6 +19,7 @@
     width: calc(100% - 55px);
     margin: 0px;
 	font-weight: lighter;
+	text-transform: uppercase;
 }
 .tribe-this-week-event .duration{
 	display: inline-block;

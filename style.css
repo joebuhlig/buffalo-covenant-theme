@@ -1408,8 +1408,9 @@ object {
     background-color: rgba(230,230,230,0.4);
 }
 .sermon-player button {
-	color:#ffffff;
-    background-color: #144c5b;
+	color:#144c5b;
+	background-color: rgba(255,255,255,0.5);
+	font-weight: bold;
 }
 .sermon-player{
 	max-width: 1000px;
@@ -1420,10 +1421,11 @@ object {
 	display: inline-block;
     width: 150px;
     border-right: 1px solid #a0a0a0;
-    padding: 4px 10px;
+    padding: 11px 10px;
     height: 100%;
     vertical-align: top;
     font-weight: bolder;
+    line-height: 1.2em;
 }
 .sermon-player-latest-text{
 	color:#144c5b;
@@ -1440,6 +1442,7 @@ object {
 	height: 100%;
 	vertical-align: top;
 	max-width: calc(100% - 270px);
+	margin-left: 15px;
 }
 .sermon-player-title-text{
     text-overflow: ellipsis;
@@ -1456,35 +1459,39 @@ object {
 }
 .sermon-player-button{
 	display: inline-block;
-	padding: 10px;
+	padding: 10px 0px;
 	height: 100%;
 	vertical-align: top;
 }
 .sermon-player-button svg{
     fill: #fff;
-    height: 17px;
-    width: 17px;
+    height: 20px;
+    width: 20px;
     vertical-align: top;
     margin-right: 5px;
+    border-radius: 100%;
+    background: #144c5b;
+    padding: 3px 2px 3px 4px;
 }
 @media screen and (max-width: 600px){
 	.sermon-player-wrapper{
-		bottom: 70px;
+		bottom: 62px;
 		padding: 5px 0px;
 	}
 	.sermon-player{
 		font-size: 0.8em;
 	}
 	.sermon-player-latest{
-		padding: 5px;
-		width:105px;
+		padding: 9px 5px;
+		width:115px;
 		vertical-align: bottom;
 		line-height: 17px;
 	}
 	.sermon-player-title{
-		padding: 5px;
+		padding: 5px 10px 5px 5px;
 		vertical-align: bottom;
-		max-width: calc(100% - 195px);
+		max-width: calc(100% - 210px);
+		margin-left: 5px;
 	}
 	.sermon-player-button{
 		vertical-align: bottom;
@@ -1492,6 +1499,7 @@ object {
 	.sermon-player button{
 		font-size: 0.8rem;
 	    padding: 0.4em 0.7em;
+	    line-height: 1.6em;
 	}
 	.sermon-players-button svg{
 		height: 15px;
