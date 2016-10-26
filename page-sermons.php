@@ -20,9 +20,13 @@ get_header(); ?>
 			</div>
 			<div class="clear"></div>
 			<?php
-			if ( have_posts() ) : 
+			wp_reset_query();
+		    $args = array('post_type' => 'sermon');
+
+		     $loop = new WP_Query($args);
+			if ( $loop->have_posts() ) : 
 				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+				while ( $loop->have_posts() ) : $loop->the_post();
 					get_template_part( 'template-parts/content', 'sermon' );
 
 				endwhile;
