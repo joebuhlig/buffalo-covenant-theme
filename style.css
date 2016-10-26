@@ -711,14 +711,23 @@ a:active {
 	width: 40em;
 	right: -230px;
 	background-color: #ffffff;
+	top: 45px;
 }
 .main-navigation ul ul li>a {
 	color: #144c5b !important;
     margin: 10px 15px;
-    border-bottom: 1px dashed #666;
     width: auto;
-    text-align: center;
     font-weight: initial;
+    font-size: 1.1em;
+}
+.main-navigation .top-level-menu>.sub-menu:before{
+	content: url(/wp-content/themes/buffalo-covenant-theme/images/pointer.svg);
+	width: 52px;
+	height: 52px;
+    position: absolute;
+    top: -17px;
+    right: 247px;
+
 }
 .main-navigation ul ul ul {
     top: 0;
@@ -1459,7 +1468,7 @@ object {
 }
 .sermon-player-button{
 	display: inline-block;
-	padding: 10px 0px;
+	padding: 10px;
 	height: 100%;
 	vertical-align: top;
 }
@@ -1495,6 +1504,7 @@ object {
 	}
 	.sermon-player-button{
 		vertical-align: bottom;
+		padding: 10px 0px;
 	}
 	.sermon-player button{
 		font-size: 0.8rem;
