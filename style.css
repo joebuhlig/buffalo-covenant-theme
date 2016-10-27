@@ -1608,10 +1608,10 @@ object {
 .archive #main{
 	max-width: 1000px;
 }
-.page-sermons .clear, .archive .clear{
+.page-sermons .clear, .archive .clear, .page-series .clear{
 	border-bottom: 1px solid #ccc;
 }
-.page-sermons .sermon, .archive .sermon{
+.page-sermons .sermon, .archive .sermon, .page-series article{
 	padding: 10px;
 	margin-top: 25px;
 	display: inline-block;
@@ -1632,7 +1632,7 @@ object {
     float: right;
     margin: 25px 0px;
 }
-.sermon-details .entry-title {
+.sermon-details .entry-title, .page-series .entry-title{
     margin: 0px 0px 10px 0px;
     font-size: 18px;
     text-transform: uppercase;
