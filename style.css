@@ -720,6 +720,7 @@ a:active {
     width: auto;
     font-weight: initial;
     font-size: 1.2em;
+    padding: 0px;
 }
 .main-navigation .top-level-menu>.sub-menu:before{
 	content: url(/wp-content/themes/buffalo-covenant-theme/images/pointer.svg);
@@ -748,6 +749,7 @@ a:active {
     font-weight: lighter;
     margin: 5px 15px;
     font-size: 1em;
+    padding-bottom: 10px;
 }
 
 .main-navigation ul ul a {
