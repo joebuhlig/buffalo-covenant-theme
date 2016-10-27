@@ -31,9 +31,11 @@ get_header(); ?>
 
 		     $loop = new WP_Query($args);
 		     if($loop->have_posts()) : ?>
+		     	<div class="staff-group">
 		        <?php while($loop->have_posts()) : $loop->the_post();
 		        	get_template_part( 'template-parts/content', 'staff' );
-		        endwhile;
+		        endwhile;?>
+		        </div><?php
 		     endif;
 			?>
 			<div id="staff-member-bio-container">

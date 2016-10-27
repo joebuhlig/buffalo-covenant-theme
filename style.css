@@ -1740,7 +1740,8 @@ object {
 	height: 100%;
 }
 .staff-group{
-	text-align: center;
+    margin: 0px auto;
+    text-align: left;
 }
 .staff-member{
 	display: inline-block;

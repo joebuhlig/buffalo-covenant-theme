@@ -126,10 +126,13 @@ $( document ).ready(function() {
     initBannerVideoSize('.video-container .filter');
     initBannerVideoSize('.video-container video');
 
+    resizeStaffGroup();
+
     $(window).on('resize', function() {
         scaleVideoContainer();
         scaleBannerVideoSize('.video-container .filter');
         scaleBannerVideoSize('.video-container video');
+        resizeStaffGroup();
     });
 
 });
@@ -186,5 +189,12 @@ function scaleBannerVideoSize(element){
         $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
 
     });
+}
+
+function resizeStaffGroup(){
+    var groupWidth = $("#main").innerWidth();
+    var memberWidth = $(".staff-member").outerWidth(true);
+    var membersPerLine = Math.floor(groupWidth/memberWidth);
+    $(".staff-group").width(membersPerLine * memberWidth);
 }
 });
