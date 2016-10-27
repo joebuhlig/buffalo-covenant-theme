@@ -86,7 +86,7 @@ get_header(); ?>
 				$series[$index]['first_post_date'] = date("M j, Y" , strtotime($posts_array[0]->post_date));
 				}
 				usort($series, function($a, $b) {
-				    return $a['last_post_date'] < $b['last_post_date'];
+				    return date($a['last_post_date']) > date($b['last_post_date']);
 				});
 				foreach ( $series as $index=>$term ) {
 				?>
