@@ -1684,7 +1684,7 @@ object {
 	}
 }
 .single-sermon article{
-	text-align: center;
+	text-align: left;
 }
 .single-sermon .sermon-thumbnail{
 	max-width: 130px;
@@ -1696,12 +1696,13 @@ object {
 }
 .single-sermon .sermon-meta{
     display: inline-block;
-    font-size: 0.9em;
+    font-size: 1em;
     vertical-align: top;
     max-width: calc(100% - 150px);
 }
 .single-sermon .sermon-meta h1{
 	margin: 0px;
+	font-size: 42px;
 }
 .single-sermon .sermon-medium-toggle{
 	margin-top: 15px;
@@ -1725,6 +1726,11 @@ object {
 }
 .single-sermon .sermon-description{
 	text-align: left;
+}
+.single-sermon .subscribe-wrapper{
+	margin: 20px auto 0px auto;
+    max-width: 400px;
+    text-align: center;
 }
 .embed-vimeo-container {
 	position: relative;
@@ -1885,5 +1891,15 @@ object {
 	}
 }
 @media screen and (max-width: 600px){
-
+	.single-sermon .sermon-thumbnail{
+		display: block;
+		max-width: 100%;
+		text-align: center;
+		margin: 0px;
+	}
+	.single-sermon .sermon-meta{
+		display: block;
+		text-align: center;
+		max-width: 100%;
+	}
 }
