@@ -34,7 +34,11 @@ get_header(); ?>
 			    'taxonomy' => 'series',
 			    'hide_empty' => false,
 			) );
-			foreach ( $terms as $term ) {
+			$series = [];
+			foreach ( $terms as $index=>$term ) {
+				$series[$index]['name'] = $term->name;
+				$series[$index]['slug'] = $term->slug;
+
 				$posts_array = get_posts(
 				    array(
 				        'posts_per_page' => 1,
@@ -48,7 +52,7 @@ get_header(); ?>
 				        )
 				    )
 				);
-				$thumb_src = $posts_array[0]->guid;
+				$series[$index]['thumb_src'] = $posts_array[0]->guid;
 				
 				$posts_array = get_posts(
 				    array(
@@ -63,7 +67,7 @@ get_header(); ?>
 				        )
 				    )
 				);
-				$last_post_date = date("M j, Y" , strtotime($posts_array[0]->post_date));
+				$series[$index]['last_post_date'] = date("M j, Y" , strtotime($posts_array[0]->post_date));
 
 				$posts_array = get_posts(
 				    array(
@@ -79,17 +83,22 @@ get_header(); ?>
 				        )
 				    )
 				);
-				$first_post_date = date("M j, Y" , strtotime($posts_array[0]->post_date));
+				$series[$index]['first_post_date'] = date("M j, Y" , strtotime($posts_array[0]->post_date));
+				}
+				usort($series, function($a, $b) {
+				    return $a['last_post_date'] < $b['last_post_date'];
+				});
+				foreach ( $series as $index=>$term ) {
 				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="sermon-series">
 						<div class="series-thumbnail">
-							<a href="/series/<?php echo $term->slug ?>"><img src="<?php echo $thumb_src ?>"></a>
+							<a href="/series/<?php echo $term['slug'] ?>"><img src="<?php echo $term['thumb_src'] ?>"></a>
 						</div>
 						<div class="series-title">
-							<h2 class="entry-title"><a href="/series/<?php echo $term->slug ?>"><?php echo $term->name ?></a></h2>
+							<h2 class="entry-title"><a href="/series/<?php echo $term['slug'] ?>"><?php echo $term['name'] ?></a></h2>
 						</div>
-						<div class="series-dates"><span><?php echo $first_post_date ?></span> - <span><?php echo $last_post_date ?></div>
+						<div class="series-dates"><span><?php echo $term['first_post_date'] ?></span> - <span><?php echo $term['last_post_date'] ?></div>
 					</div>
 				</article><?php
 			}?>
