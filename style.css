@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.47
+Version: 1.0.48
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -1607,7 +1607,7 @@ object {
 }
 .archive #main, .page-series #main{
 	max-width: 1000px;
-	text-align: left;
+	text-align: center;
 }
 .page-sermons .clear, .archive .clear, .page-series .clear{
 	border-bottom: 1px solid #ccc;
@@ -1663,8 +1663,7 @@ object {
 	    width: 100%;
 	    text-align: center;
 	}
-	.page-sermons .sermon, .archive .sermon, .page-series article{
-		max-width: none;
+	.page-sermons .sermon, .archive .sermon{
 		border-top: 1px solid #e6e6e6;
 	}
 	.page-sermons .clear{
@@ -1855,7 +1854,43 @@ object {
 	text-align: left;
 	max-width: 350px;
 }
-
+.widget_page_tile_widget{
+	float: left;
+	width: 33%;
+	height: 200px;
+	margin: 1px 1px 25px 1px;
+}
+.page-tile{
+	background-color: #144c5b;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.page-tile-title{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    color: #ffffff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.page-tile-text{
+	display: none;
+}
+#tile-description {
+	margin: 0px 0px 25px 0px;
+    padding: 20px;
+    background-color: rgb(230, 230, 230);
+    display: block;
+}
+.dialog-open .page-tile{
+	opacity: 0.6;
+}
+.dialog-open .show-dialog .page-tile {
+	opacity: 1;
+}
 @media screen and (min-width: 56em) {
 	.menu-toggle {
 		display: none;
