@@ -72,7 +72,11 @@ $( document ).ready(function() {
         $("#tile-description").attr("data-widget-id", $(this).parent().attr("id"));
         $("body").addClass("dialog-open");
         $(this).addClass("show-dialog");
-        $tileDescription.slideDown(200);
+        $tileDescription.slideDown(200, function(e){
+            $('html, body').stop().animate({
+                scrollTop: $("#tile-description").offset().top - 100
+            }, 500);
+        });
     })
 
     $(window).click(function(){
