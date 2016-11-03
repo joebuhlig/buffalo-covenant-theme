@@ -1655,6 +1655,30 @@ object {
 .widget-title{
 	font-size: 1.2em;
 }
+.widget_menu_item_description_widget .menu-description{
+	width: 300px;
+    margin: 0px 15px;
+}
+.widget_menu_item_description_widget .menu-description-title{
+    font-size: 2.5em;
+    color: #ffffff;
+}
+.widget_menu_item_description_widget .menu-description-text{
+    width: 100%;
+    font-size: 1.2em;
+    color: #cccccc;
+    padding: 10px 0px;
+}
+.widget_menu_item_description_widget .menu-description-button{
+	margin: 10px 0px;
+}
+.widget_menu_item_description_widget .menu-description-button a{
+    margin: 0px;
+}
+.widget_menu_item_description_widget .menu-description-button button{
+	border-color: #ffffff;
+	color: #ffffff;
+}
 .archive #main, .page-series #main{
 	max-width: 1000px;
 	text-align: center;
