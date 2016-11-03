@@ -260,6 +260,24 @@ function get_latest_sermon(){
         'posts_per_page' => 1
     ) );
 	$speaker = get_the_terms( $sermons->posts[0], 'speakers');
+	$series = get_the_terms( $sermons->posts[0], 'series');
+	if ($series){
+		$posts_array = get_posts(
+		    array(
+		        'posts_per_page' => -1,
+		        'post_type' => 'attachment',
+		        'tax_query' => array(
+		            array(
+		                'taxonomy' => 'series',
+		                'field' => 'term_id',
+		                'terms' => wp_list_pluck( $series, 'term_id' ),
+		            )
+		        )
+		    )
+		);
+		$thumb_src = $posts_array[0]->guid;
+		$sermon['thumb_src'] = $thumb_src;
+	};
     $title = $sermons->posts[0]->post_title;
 	$date = date("F j" , strtotime($sermons->posts[0]->post_date));
 	$link = "/sermons/" . $sermons->posts[0]->post_name . "?autoplay=true";
