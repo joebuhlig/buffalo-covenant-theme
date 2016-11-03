@@ -967,7 +967,7 @@ a:active {
     margin: 0px auto;
 }
 .home .site-main{
-	max-width: 1100px;
+	max-width: 100%;
 }
 
 .site-main .comment-navigation,
@@ -1112,9 +1112,15 @@ a:active {
 #content{
     background-color: #f8f5ec;
 }
+.home #content{
+	background-color: #ffffff;
+}
 #primary{
 	background-color: #ffffff;
 	margin: 0px 80px;
+}
+.home #primary{
+	margin: 0px;
 }
 #main{
 	text-align: center;
@@ -1428,6 +1434,7 @@ object {
 }
 .home article{
 	width: 100%;
+	padding: 0px;
 }
 .sermon-player-wrapper{
     position: relative;
@@ -1570,10 +1577,12 @@ object {
     width: 100%;
     text-align: center;
     margin-top: 25px;
+    padding: 15px;
+    background-color: #e6e6e6;
 }
 .featured-event-image{
     width: 100%;
-    max-height: 160px;
+    max-height: 178px;
     overflow: hidden;
 }
 .featured-event-image img{
@@ -1581,7 +1590,8 @@ object {
 }
 .widget_featured_event_widget {
     display: inline-block;
-    width: 320px;
+    max-width: 360px;
+    width: calc(33% - 20px);
     text-align: left;
     margin: 10px;
 }
@@ -1597,25 +1607,27 @@ object {
     font-size: 0.9em;
 }
 .home-events {
-    margin: 50px 20px 25px;
-    width: calc(60% - 40px);
+    margin: 50px 10px 25px;
+    max-width: 740px;
+    width: calc(66% - 20px);
     text-align: left;
     display: inline-block;
 }
 .home-subscribe-bar{
 	display: inline-block;
-    width: calc(40% - 45px);
+    max-width: 360px;
+    width: calc(33% - 20px);
     vertical-align: top;
-    margin: 50px 20px 25px 20px;
+    margin: 50px 10px 25px;
 }
 @media screen and (max-width: 900px){
 	.home-events{
-		width: 100%;
-		margin:0px;
+		width: calc(100% - 20px);
+		margin:0px 10px;
 	}
 	.home-subscribe-bar{
-		width: 100%;
-		margin:0px;
+		width: calc(100% - 20px);
+		margin:0px 10px;
 	}
 }
 .home-subscribe-buttons{
