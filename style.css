@@ -1166,7 +1166,6 @@ a:active {
 .home-title{
 	position: absolute;
 	top: 28%;
-	height: 100%;
     text-align: center;
     width: 100%;
     color: #ffffff;
@@ -1556,17 +1555,32 @@ object {
 }
 .mission-statement{
 	text-align: center;
+	margin: 40px 0px;
 }
 .mission-statement div{
 	margin-bottom: 20px;
 }
+.mission-statement-title{
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 1.7em;
+    line-height: 1em;
+    border-right: 1px solid #e6e6e6;
+    padding: 0px 20px;
+}
 .mission-statement-main{
-	font-weight: bold;
-	font-size: 1.3em;
-	letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    display: inline-block;
+    padding: 0px 20px;
 }
 .mission-statement-sub{
 	color: #666666;
+	display: none;
+}
+.mission-statement-button{
+	display: none;
 }
 .mission-statement-button button{
 	padding: 10px 20px;
