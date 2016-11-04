@@ -60,10 +60,6 @@ $( document ).ready(function() {
         $(".main-navigation .menu-main-menu-container a").fadeIn(200);
         $(".main-navigation").removeClass("searching");
         $("#site-navigation").removeClass("toggled");
-        $("body").removeClass("bio-open");
-        $(".show-bio").removeClass("show-bio");
-        $("#staff-member-bio-container").attr("data-member-id", 0);
-        $("#staff-member-bio-container").slideUp(200);
     });
 
     setWeekCalClickEvent();
@@ -88,43 +84,15 @@ $( document ).ready(function() {
 
     $(".staff-member").click(function(e){
         e.stopPropagation();
-        $staffMember = $(this);
-        groupWidth = $("#main").innerWidth();
-        memberWidth = $staffMember.outerWidth(true);
-        membersPerLine = Math.floor(groupWidth/memberWidth);
-        currentMember = $staffMember.index() + 1;
-        $bioContainer = $("#staff-member-bio-container");
-        if ($staffMember.attr("data-member-id") == $bioContainer.attr("data-member-id")){
-            $("body").removeClass("bio-open");
-            $(".show-bio").removeClass("show-bio");
-            $bioContainer.attr("data-member-id", 0);
-            $bioContainer.slideUp(200);
-            return;
+        var thisOpen = false;
+        if ($(this).hasClass("show-bio")){
+            thisOpen = true;
         }
-        if ($bioContainer.index() < currentMember){
-            currentMember = currentMember - 1;
-        }
-        endOfRow = Math.min(Math.ceil(currentMember/membersPerLine) * membersPerLine, $(".staff-member").length);
-        $("body").addClass("bio-open");
         $(".show-bio").removeClass("show-bio");
-        pointerPosition = $staffMember.position().left - 20 + memberWidth/2 - $("#staff-member-bio-pointer").width()/2 - ($("#main").outerWidth(true) - $("#main").width())/2 - ($("#primary").outerWidth(true) - $("#main").outerWidth(true))/2;
-        if ($bioContainer.is(':visible')){
-            $("#staff-member-bio-container:visible").slideUp(200,function(){
-                $staffMember.addClass("show-bio");
-                $("#staff-member-bio-text").html($staffMember.find(".staff-member-bio").html());
-                $("#staff-member-bio-pointer").css("left", pointerPosition);
-                $bioContainer.attr("data-member-id", $staffMember.attr("data-member-id"));
-                $bioContainer.insertAfter($(".staff-member").eq(endOfRow - 1));
-                $bioContainer.slideDown(200);
-            });    
-        }
-        else {
-            $staffMember.addClass("show-bio");
-            $("#staff-member-bio-text").html($staffMember.find(".staff-member-bio").html());
-            $("#staff-member-bio-pointer").css("left", pointerPosition);
-            $bioContainer.attr("data-member-id", $staffMember.attr("data-member-id"));
-            $bioContainer.insertAfter($(".staff-member").eq(endOfRow - 1));
-            $bioContainer.slideDown(200);
+        $(".staff-member-bio").fadeOut(200);
+        if (!thisOpen){
+            $(this).addClass("show-bio");
+            $(this).find(".staff-member-bio").fadeIn(200);
         }
     })
 
