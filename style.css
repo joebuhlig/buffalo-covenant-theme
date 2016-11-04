@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.52
+Version: 1.0.53
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -1945,25 +1945,17 @@ object {
 	max-width: 350px;
 }
 .widget_page_tile_widget{
-	float: left;
-	width: calc(33% - 20px);
-	height: 200px;
-	margin: 1px 10px 25px;
+    padding: 10px 0px;
+    border-bottom: 1px solid #e6e6e6;
+    margin: 0px;
 }
 .page-tile{
-    width: 100%;
-    height: 100%;
-    position: relative;
+
 }
 .page-tile-title{
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     font-size: 1.8em;
-    color: #ffffff;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
     font-weight: lighter;
     width: 100%;
 }
@@ -1973,6 +1965,9 @@ object {
 }
 .page-tile-text{
 	display: none;
+    background: #e6e6e6;
+    padding: 20px;
+    margin: 10px 0px;
 }
 #tile-description {
 	margin: 0px 0px 25px 0px;
@@ -1986,6 +1981,52 @@ object {
 .dialog-open .show-dialog .page-tile {
 	opacity: 1;
 }
+.tile-toggle{
+	float: right;  
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	-o-transition-property: -o-transform;
+	transition-property: transform;
+}
+.tile-toggle.rotated{
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+.tile-toggle::before,
+.tile-toggle::after {
+	content: '';
+	display: block;
+	position: relative;
+	background-color: #144c5b;
+	-webkit-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+
+.tile-toggle::before{
+    top: 14px;
+    right: 0px;
+    width: 26px;
+    height: 2px;
+    margin-top: 0px;
+}
+.tile-toggle::after{
+    left: 12px;
+    right: 0px;
+    width: 2px;
+    height: 26px;
+    margin-top: 0px;
+}
+
 @media screen and (min-width: 56em) {
 	.menu-toggle {
 		display: none;

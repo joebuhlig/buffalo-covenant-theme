@@ -48,35 +48,11 @@ $( document ).ready(function() {
         e.stopPropagation();
     });
 
-    $(".dialog-link").click(function(e){
-        e.stopPropagation();
-        e.preventDefault();
-        $("body").removeClass("dialog-open");
-        $(".show-dialog").removeClass("show-dialog");
-        if ($("#tile-description").attr("data-widget-id") == $(this).parent().attr("id")){
-            $("#tile-description").attr("data-widget-id", 0);
-            $("#tile-description").slideUp(200);
-            return;
-        }
-        if ($("#tile-description").length){
-            var $tileDescription = $("#tile-description");
-        }
-        else{
-            var $tileDescription = $('<div class="clear"></div><div id="tile-description"></div>');
-            $tileDescription.insertAfter($(".widget_page_tile_widget").last());
-            $("#tile-description").click(function(e){
-                e.stopPropagation();
-            })
-        }
-        $("#tile-description").html($(this).parent().find(".page-tile-text").html());
-        $("#tile-description").attr("data-widget-id", $(this).parent().attr("id"));
-        $("body").addClass("dialog-open");
-        $(this).addClass("show-dialog");
-        $tileDescription.slideDown(200, function(e){
-            $('html, body').stop().animate({
-                scrollTop: $("#tile-description").offset().top - 100
-            }, 500);
-        });
+    $(".tile-toggle").click(function(e){
+        $tile = $(this).parents(".widget_page_tile_widget");
+        $tileDescription = $tile.find(".page-tile-text");
+        $(this).toggleClass("rotated");
+        $tileDescription.slideToggle(200);
     })
 
     $(window).click(function(){
@@ -88,10 +64,6 @@ $( document ).ready(function() {
         $(".show-bio").removeClass("show-bio");
         $("#staff-member-bio-container").attr("data-member-id", 0);
         $("#staff-member-bio-container").slideUp(200);
-        $("body").removeClass("dialog-open");
-        $(".show-dialog").removeClass("show-dialog");
-        $("#tile-description").attr("data-widget-id", 0);
-        $("#tile-description").slideUp(200);
     });
 
     setWeekCalClickEvent();
