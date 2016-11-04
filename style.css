@@ -1572,10 +1572,11 @@ object {
 }
 .mission-statement div{
 	margin-bottom: 20px;
+	vertical-align: text-bottom;
+	display: inline-block;
 }
 .mission-statement-title{
     text-transform: uppercase;
-    display: inline-block;
     font-size: 1.7em;
     line-height: 1em;
     border-right: 1px solid #e6e6e6;
@@ -1585,26 +1586,29 @@ object {
     font-weight: bold;
     font-size: 1.3em;
     letter-spacing: 2px;
-    display: inline-block;
     padding: 0px 20px;
 }
-.mission-statement-sub{
-	color: #666666;
-	display: none;
-}
 .mission-statement-button{
-	display: none;
+    border-left: 1px solid #e6e6e6;
+    padding: 10px 20px;
 }
 .mission-statement-button button{
 	padding: 10px 20px;
     font-size: 0.9rem;
     font-weight: bold;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 900px){
+	.mission-statement div{
+		display: block;
+		border: 0px;
+	}
 }
 .featured-sidebar{
     width: 100%;
     text-align: center;
     margin-top: 25px;
-    padding: 15px;
+    padding: 30px 15px;
     background-color: #e6e6e6;
 }
 .featured-event-image{
