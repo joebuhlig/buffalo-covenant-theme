@@ -617,6 +617,8 @@ a:active {
 }
 .main-navigation .logo {
 	float:left;
+	position: relative;
+	z-index: 999;
 	max-width: 250px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -820,6 +822,9 @@ a:active {
 }
 #search-menu-item-form .search-submit{
 	display: none;
+}
+#mega-menu-wrap-primary{
+	z-index: 998;
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link{
 	visibility: hidden;
