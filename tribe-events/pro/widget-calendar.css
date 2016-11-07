@@ -21,6 +21,12 @@
 	font-weight: lighter;
 	text-transform: uppercase;
 }
+.events-archive h2.tribe-events-page-title {
+	font-size: 2em;
+}
+.events-archive #tribe-bar-form input[type=text]{
+	border-bottom-style: solid;
+}
 .tribe-this-week-event .duration{
 	display: inline-block;
 }
@@ -58,7 +64,7 @@
 	background-color: #f8f5ec;
 	color: #144c5b;
 }
-.entry-content ul.tribe-events-sub-nav, .tribe-events-sub-nav{
+.home .entry-content ul.tribe-events-sub-nav,.home .tribe-events-sub-nav{
 	background-color: #144c5b;
 	margin: 0px !important;
 }
