@@ -27,6 +27,9 @@
 .events-archive #tribe-bar-form input[type=text]{
 	border-bottom-style: solid;
 }
+.events-archive .site-header .poster.page{
+	height: 90px;
+}
 .tribe-this-week-event .duration{
 	display: inline-block;
 }
