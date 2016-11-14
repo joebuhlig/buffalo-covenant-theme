@@ -468,6 +468,35 @@ return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
 
+function staff_members_func( $atts ){
+    $a = shortcode_atts( array(
+        'role' => 'staff'
+    ), $atts );
+
+	$args = array('post_type' => 'staff',
+        'order' => 'ASC',
+        'orderby' => 'menu_order',
+        'tax_query' => array(
+		array(
+			'taxonomy' => 'staff-roles',
+			'field'    => 'slug',
+			'terms'    => $a['role'],
+		),
+	),
+        'posts_per_page' => 1000
+     );
+
+     $loop = new WP_Query($args);
+     if($loop->have_posts()){
+     	echo '<div class="staff-group">';
+     		while($loop->have_posts()) : $loop->the_post();
+     			get_template_part( 'template-parts/content', 'staff' );
+		    endwhile;
+		echo '</div>';
+     }
+}
+add_shortcode( 'staff', 'staff_members_func' );
+
 function custom_tribe_events_this_week_previous_link( $start_date, $text = '' ) {
 
 	if ( empty( $text ) ) {

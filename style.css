@@ -1909,60 +1909,28 @@ object {
 }
 .staff-member{
 	display: inline-block;
-	padding: 15px;
-	cursor: pointer;
+	padding: 2px;
 	max-width: 160px;
     min-width: 150px;
     vertical-align: top;
     position: relative;
 }
-.bio-open .staff-member{
-	opacity: 0.6;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.staff-member.show-bio{
-	opacity: 1.0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
+
 .staff-member-pic{
 	position: relative;
 	width: 100%;
-	z-index: 11;
-}
-.staff-member-pic:after{
-	content: 'View Bio';
-    position: absolute;
-    width: 100%; height:100%;
-    top:0; left:0;
-    background:rgba(255,255,255,0.6);
-    opacity: 0;
-    transition: all 1s;
-    border-radius: 100%;
-    color: #666666;
-    font-weight: lighter;
-    line-height: 13em;
-    text-align: center;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.staff-member-pic:hover:after {
-    opacity: 1;
-}
-.staff-member.show-bio .staff-member-pic:hover:after {
-    opacity: 0;
 }
 .staff-member-pic img{
 	width: 100%;
-	border-radius: 100%;
 	vertical-align: top;
+}
+.staff-member-info{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-weight: lighter;
 }
 .staff-member-name{
 	font-size: 0.9em;
@@ -1972,25 +1940,6 @@ object {
 .staff-member-title{
 	text-align: center;
 	font-size: 0.8em;
-}
-.staff-member-bio{
-	display: none;
-    position: absolute;
-    width: 550px;
-    left: 15px;
-    background-color: #e6e6e6;
-    padding: 25px 25px 25px 200px;
-    box-shadow: 0 0px 10px 2px rgba(0, 0, 0, 0.25);
-    min-height: 200px;
-    margin: -200px 0px 0px -20px;
-    z-index: 10;
-}
-.staff-member-name, .staff-member-title, .staff-member-pic{
-	position: relative;
-	z-index: 9;
-}
-.show-bio .staff-member-name, .show-bio .staff-member-title, .show-bio .staff-member-pic{
-	z-index: 11;
 }
 .tml{
     margin: 0px auto;
