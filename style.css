@@ -612,6 +612,15 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+.main-navigation.open-menu {
+	background-color: rgba(70,70,70,1);
+    height: 50px;
+    padding: 0px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 .back-page .main-navigation{
 	background-color: rgba(70,70,70,0.8);
 }
@@ -626,7 +635,7 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.main-navigation.scrolled .logo{
+.main-navigation.scrolled .logo, .main-navigation.open-menu .logo{
 	max-width: 200px;
 	padding: 0px;
 	margin: 10px;
@@ -795,7 +804,7 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.main-navigation.scrolled #search-menu-item{
+.main-navigation.scrolled #search-menu-item, .main-navigation.open-menu #search-menu-item{
 	padding: 0px;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;

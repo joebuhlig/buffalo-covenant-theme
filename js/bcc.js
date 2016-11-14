@@ -35,6 +35,13 @@ $( document ).ready(function() {
         $(".main-navigation .top-level-menu ul:first").slideToggle(200);
     });
 
+    jQuery('li.mega-menu-item').on('open_panel', function() {
+        $(".main-navigation").addClass("open-menu");
+    })
+    jQuery('li.mega-menu-item').on('close_panel', function() {
+        $(".main-navigation").removeClass("open-menu");
+    })
+
     $(".main-navigation #search-menu-item").click(function(e){
         e.preventDefault();
         e.stopPropagation();
