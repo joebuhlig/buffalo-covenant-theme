@@ -595,7 +595,7 @@ a:active {
     width: 100%;
     position: fixed;
     top: 0px;
-    padding:20px;
+    padding:20px 0px;
     z-index: 9999;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -618,6 +618,7 @@ a:active {
 .main-navigation .logo {
 	float:left;
 	position: relative;
+	padding-left:20px;
 	z-index: 999;
 	max-width: 250px;
     -webkit-transition: all 0.5s ease;
@@ -627,6 +628,7 @@ a:active {
 }
 .main-navigation.scrolled .logo{
 	max-width: 200px;
+	padding: 0px;
 	margin: 10px;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -787,6 +789,18 @@ a:active {
 #search-menu-item{
 	display: inline-block;
 	vertical-align: bottom;
+	padding-right: 20px;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-navigation.scrolled #search-menu-item{
+	padding: 0px;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 #search-menu-item svg{
