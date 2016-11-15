@@ -507,7 +507,7 @@ function tile_func( $atts ){
     $result = "";
 	$result .= '<div class="page-tile">';
     $result .= '<a href="'  . $a['link'] . '" >';
-	$result .= '<img src="' . $a['image'] . '" >';
+	$result .= '<img class="grayscale" src="' . $a['image'] . '" >';
 	$result .= '<div class="page-tile-title">' . $a['title'] . '</div>';
 	$result .= '</a>';
 	$result .= '</div>';
