@@ -498,6 +498,23 @@ function staff_members_func( $atts ){
 }
 add_shortcode( 'staff', 'staff_members_func' );
 
+function tile_func( $atts ){
+    $a = shortcode_atts( array(
+        'image' => '',
+        'title' => 'Blank',
+        'link' => '/'
+    ), $atts );
+    $result = "";
+	$result .= '<div class="page-tile">';
+    $result .= '<a href="'  . $a['link'] . '" >';
+	$result .= '<img src="' . $a['image'] . '" >';
+	$result .= '<div class="page-tile-title">' . $a['title'] . '</div>';
+	$result .= '</a>';
+	$result .= '</div>';
+	return $result;
+}
+add_shortcode( 'tile', 'tile_func');
+
 function custom_tribe_events_this_week_previous_link( $start_date, $text = '' ) {
 
 	if ( empty( $text ) ) {
