@@ -39,7 +39,18 @@ $( document ).ready(function() {
         $(".main-navigation").addClass("open-menu");
     })
     jQuery('li.mega-menu-item').on('close_panel', function() {
-        $(".main-navigation").removeClass("open-menu");
+        if (!$('.mega-menu-open').length){
+            $(".main-navigation").removeClass("open-menu");
+        }
+    })
+
+    $(".mega-menu-toggle").on('click', function(){
+        if ($('.mega-menu-open').length){
+            $(".main-navigation").addClass("open-menu");
+        }
+        else{
+            $(".main-navigation").removeClass("open-menu");
+        }
     })
 
     $(".main-navigation #search-menu-item").click(function(e){
