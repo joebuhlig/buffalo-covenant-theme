@@ -36,6 +36,9 @@ $( document ).ready(function() {
     });
 
     jQuery('li.mega-menu-item').on('open_panel', function() {
+        if ($('.mega-menu-open').length){
+            
+        }
         $(".main-navigation").addClass("open-menu");
     })
     jQuery('li.mega-menu-item').on('close_panel', function() {

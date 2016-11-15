@@ -624,6 +624,10 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+.mobile .main-navigation.open-menu {
+    height: 100%;
+    overflow: scroll;
+}
 .main-navigation .logo {
 	float:left;
 	position: relative;
@@ -846,9 +850,6 @@ a:active {
 #search-menu-item-form .search-submit{
 	display: none;
 }
-#mega-menu-wrap-primary{
-	z-index: 998;
-}
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link{
 	visibility: hidden;
 }
@@ -869,6 +870,10 @@ a:active {
     border-right: 1px solid #cccccc;
     margin: 30px 0px;
     padding: 0px 30px 35px;
+}
+.mobile #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.widget_text{
+	border-left: none;
+	border-right: none;
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.widget_text ~ .widget_text{
 	border: none;
@@ -1643,7 +1648,6 @@ object {
 	}
 	.sermon-player button{
 		font-size: 0.8rem;
-	    padding: 0.4em 0.7em;
 	    line-height: 1.6em;
 	}
 	.sermon-players-button svg{
