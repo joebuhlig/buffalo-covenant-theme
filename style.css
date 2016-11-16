@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.66
+Version: 1.0.67
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -889,7 +889,7 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.mega-menu-open .mega-toggle-block{
+.mega-menu-open .mega-toggle-block, .main-navigation.scrolled .mega-toggle-block{
 	line-height: 4em;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -1820,7 +1820,7 @@ object {
 	font-size: 0.85em;
 	text-align: left;
 }
-@media screen and (max-width: 56em){
+@media screen and (max-width: 600px){
 	.pre-sermon-list .sermon-list-search{
 	    float: none;
 	    margin: 0px;
@@ -1837,6 +1837,8 @@ object {
 	}
 	.page-sermons .sermon, .archive .sermon{
 		border-top: 1px solid #e6e6e6;
+		display: block;
+	    max-width: 100%;
 	}
 	.page-sermons .clear{
 		border-bottom: 0px;
@@ -1978,7 +1980,7 @@ object {
 }
 .page-tile{
 	display: inline-block;
-	width: 33%;
+	width: calc(33% - 2px);
 	position: relative;
 }
 .page-tile a{
@@ -2075,6 +2077,7 @@ object {
     vertical-align: top;
     background-color:#144c5b;
     color:#ffffff;
+    margin: 10px 0px;
 }
 .contact-form h2{
 	margin: 10px 0px;
@@ -2098,6 +2101,11 @@ img.grayscale {
 img.grayscale:hover {
   filter: none;
   -webkit-filter: grayscale(0%);
+}
+@media screen and (max-width: 760px){
+	.page-tile{
+		width: calc(50% - 2px);
+	}
 }
 
 @media screen and (min-width: 56em) {
