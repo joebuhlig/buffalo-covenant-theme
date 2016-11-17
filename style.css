@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.70
+Version: 1.0.71
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -471,6 +471,63 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+    height: 100vh;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    height: 100%;
+    bottom: 0;
+    position: absolute;
+    max-width: initial;
+    width: auto;
+}
+.site-header .poster.page {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 350px;
+}
+.site-header .poster.page img{
+    position: absolute;
+    bottom: 0px;
+    max-width: none;
+    right: 0px;
+}
+.site-header .poster.page header{
+    top: calc(66% - 72px);
+    color: #fff;
+    position: relative;
+    text-align: center;
+    font-size: 1.5em;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
 
 /*--------------------------------------------------------------
 # Forms
@@ -605,7 +662,6 @@ a:active {
 }
 .main-navigation.scrolled {
 	background-color: rgba(70,70,70,0.8);
-    height: 50px;
     padding: 0px;
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
     -webkit-transition: all 0.5s ease;
@@ -618,8 +674,8 @@ a:active {
 }
 .main-navigation.open-menu {
 	background-color: rgba(70,70,70,1);
-    height: 50px;
-    padding: 0px;
+/*    height: 50px;
+    padding: 0px;*/
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -640,7 +696,7 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.main-navigation.scrolled .logo, .main-navigation.open-menu .logo{
+.main-navigation.scrolled .logo{
 	max-width: 200px;
 	padding: 0px;
 	margin: 10px;
@@ -679,6 +735,10 @@ a:active {
 }
 .main-navigation.scrolled .menu-main-menu-container, .main-navigation.scrolled .menu-mobile-menu-container {
 	margin: 5px 0px 0px 0px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 .main-navigation ul {
 	display: none;
@@ -809,7 +869,7 @@ a:active {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.main-navigation.scrolled #search-menu-item, .main-navigation.open-menu #search-menu-item{
+.main-navigation.scrolled #search-menu-item{
 	padding: 0px;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -871,6 +931,10 @@ a:active {
     border-right: 1px solid #cccccc;
     margin: 30px 0px;
     padding: 0px 30px 35px;
+}
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.mega-menu-item-type-widget{
+    margin: 30px 0px;
+    padding: 0px 30px;	
 }
 .mobile #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.widget_text{
 	border-left: none;
@@ -969,9 +1033,6 @@ a:active {
 .main-navigation.toggled li{
 	float: none;
     padding: 10px 0px 0px 0px;
-}
-.main-navigation.toggled li a{
-	color: #144c5b;
 }
 .main-navigation.toggled .menu-main-menu-container>ul, .main-navigation.toggled .menu-mobile-menu-container>ul{
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -1481,62 +1542,7 @@ object {
 ## Customizations
 --------------------------------------------------------------*/
 
-.homepage-hero-module {
-    border-right: none;
-    border-left: none;
-    position: relative;
-}
-.no-video .video-container video,
-.touch .video-container video {
-    display: none;
-}
-.no-video .video-container .poster,
-.touch .video-container .poster {
-    display: block !important;
-}
-.video-container {
-    position: relative;
-    bottom: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: #000;
-}
-.video-container .poster img {
-    height: 100%;
-    bottom: 0;
-    position: absolute;
-    max-width: initial;
-    width: auto;
-}
-.site-header .poster.page {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 350px;
-}
-.site-header .poster.page img{
-    position: absolute;
-    bottom: 0px;
-    max-width: none;
-    right: 0px;
-}
-.site-header .poster.page header{
-    top: calc(66% - 72px);
-    color: #fff;
-    position: relative;
-    text-align: center;
-    font-size: 1.5em;
-}
-.video-container video {
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-}
-.video-container video.fillWidth {
-    width: 100%;
-}
+
 .sidebar{
 	width: 30%;
 	display: inline-block;
@@ -1934,7 +1940,7 @@ object {
 .staff-member{
 	display: inline-block;
 	padding: 2px;
-	max-width: 20%;
+	max-width: 25%;
     min-width: 150px;
     vertical-align: top;
     position: relative;
@@ -2070,7 +2076,7 @@ object {
     margin-top: 0px;
 }
 .contact-form {
-    max-width: 450px;
+    max-width: 470px;
     display: inline-block;
     text-align: left;
     padding: 40px;

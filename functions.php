@@ -130,7 +130,7 @@ add_action( 'widgets_init', 'buffalo_covenant_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function buffalo_covenant_theme_scripts() {
-	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.70' );
+	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.71' );
 
 	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '20161116', true);
 
@@ -284,6 +284,7 @@ function get_latest_sermon(){
 	$sermon['title'] = $title;
 	$sermon['date'] = $date;
 	$sermon['link'] = $link;
+	$sermon['post_name'] = $sermons->posts[0]->post_name;
 	if ($speaker){
 		$sermon['speaker'] = $speaker[0]->name;
 	}

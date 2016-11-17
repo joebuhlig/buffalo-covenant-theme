@@ -12,6 +12,17 @@ $( document ).ready(function() {
         $("body").addClass("mobile");
         $(".video-container .poster").removeClass("hidden");
     }
+    scaleVideoContainer();
+
+    initBannerVideoSize('.video-container .filter');
+    initBannerVideoSize('.video-container video');
+
+
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container .filter');
+        scaleBannerVideoSize('.video-container video');
+    });
     
 
     $(document).on('scroll', function() {
@@ -102,18 +113,6 @@ $( document ).ready(function() {
             $(".sermon-medium-toggle button").html("Audio Only?");
         }
     })
-
-    scaleVideoContainer();
-
-    initBannerVideoSize('.video-container .filter');
-    initBannerVideoSize('.video-container video');
-
-
-    $(window).on('resize', function() {
-        scaleVideoContainer();
-        scaleBannerVideoSize('.video-container .filter');
-        scaleBannerVideoSize('.video-container video');
-    });
 
 });
 
