@@ -82,6 +82,9 @@
     width: 46%;
     display: inline-block;
 }
+.tribe-event-start-date{
+	text-align: left;
+}
 @media only screen and (max-width: 767px) {
 	.tribe-this-week-widget-horizontal .tribe-this-week-widget-day, .tribe-this-week-widget-horizontal .tribe-this-week-widget-hide-weekends .tribe-this-week-widget-day {
     	width: 14.28% !important; 
