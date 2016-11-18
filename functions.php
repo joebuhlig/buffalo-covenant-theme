@@ -366,7 +366,7 @@ class Home_Title_Widget extends WP_Widget {
 			echo '<div class="home-title-large">' . $instance[ 'home_title_large' ] . '</div>';
 			echo '<div class="home-title-subtext">' . $instance[ 'home_title_subtext' ] . '</div>';
 			echo '<div class="home-title-button"><a href="' . $instance[ 'home_title_button_link' ] . '">' . $instance[ 'home_title_button' ] . '</a></div>';
-			echo '<div class="home-title-footer"><a href="/map">' . $instance[ 'home_title_footer' ] . '</a></div>';
+			echo '<div class="home-title-footer"><a href="/new/#directions">' . $instance[ 'home_title_footer' ] . '</a></div>';
 			
 		if ( array_key_exists('after_widget', $args) ) echo $args['after_widget'];
 	}
