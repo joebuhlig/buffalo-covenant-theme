@@ -86,6 +86,8 @@ summary {
 article{
 	text-align: left;
 	padding: 30px;
+	display: table-cell;
+	width: calc(70% - 20px);
 }
 footer {
 	background-color: #e6e6e6;
@@ -514,11 +516,19 @@ table {
     right: 0px;
 }
 .site-header .poster.page header{
-    top: calc(66% - 72px);
+    bottom: 0px;
     color: #fff;
-    position: relative;
+    position: absolute;
     text-align: center;
     font-size: 1.5em;
+    width: 100%;
+}
+.site-header .poster.page header .entry-title{
+    margin: 0px auto;
+    max-width: 1200px;
+    text-align: left;
+    background-color: rgba(255,255,255,0.4);
+    padding: 0px 35px;
 }
 .video-container video {
     position: absolute;
@@ -908,6 +918,9 @@ a:active {
 :-moz-placeholder { /* Firefox 18- */
   color: #FFFFFF;
 }
+.widget_search .search-submit{
+	background-color: #ffffff;
+}
 #search-menu-item-form .search-submit{
 	display: none;
 }
@@ -1139,10 +1152,10 @@ a:active {
 
 .site-main {
 	width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0px auto;
 }
-.home .site-main{
+.home .site-main, .events-archive .site-main{
 	max-width: 100%;
 }
 
@@ -1285,20 +1298,11 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-#content{
-    background-color: #f8f5ec;
-}
-.home #content{
-	background-color: #ffffff;
-}
-#primary{
-	background-color: #ffffff;
-	margin: 0px 80px;
-}
 .home #primary{
 	margin: 0px;
 }
 #main{
+	display: table;
 	text-align: center;
 }
 .sticky {
@@ -1544,10 +1548,11 @@ object {
 
 
 .sidebar{
+	background-color: #f8f5ec;
 	width: 30%;
-	display: inline-block;
+	display: table-cell;
 	vertical-align: top;
-	padding: 10px;
+	padding: calc(30px + 1.5em) 10px 30px;
 }
 .sidebar .widget .search-field{
 	width:calc(100% - 90px);
@@ -1783,7 +1788,7 @@ object {
 .widget-title{
 	font-size: 1.2em;
 }
-.archive #main, .page-series #main{
+.post-type-archive-sermon #main, .page-series #main{
 	max-width: 1000px;
 	text-align: center;
 }

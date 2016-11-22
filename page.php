@@ -28,7 +28,12 @@ get_header(); ?>
 				endif;
 
 			endwhile; // End of the loop.
-			?>
+
+			if ( !is_front_page() && !tribe_is_month()) : ?>
+			<div class="sidebar">
+				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
+			</div>
+			<?php endif ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
