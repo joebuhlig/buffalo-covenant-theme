@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.77
+Version: 1.0.78
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -2147,12 +2147,14 @@ a.anchor {
 	article{
 		padding: 10px;
 		width:100%;
+		display: block;
 	}
 	.articles{
 		width: 100%;
 	}
 	.sidebar{
 		width:100%;
+		display: block;
 	}
 	.widget_featured_event_widget{
 	    display: block;
