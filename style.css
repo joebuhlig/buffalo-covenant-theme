@@ -477,7 +477,7 @@ table {
     border-right: none;
     border-left: none;
     position: relative;
-    height: 100vh;
+    height: calc(100% - 100px);
 }
 .no-video .video-container video,
 .touch .video-container video {
