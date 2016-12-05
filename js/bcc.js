@@ -131,7 +131,7 @@ function setWeekCalClickEvent(){
 
 function scaleVideoContainer() {
 
-    var height = $(window).height() - 100;
+    var height = $(window).height();
     var unitHeight = parseInt(height) + 'px';
     $('.homepage-hero-module').css('height',unitHeight);
 

@@ -71,6 +71,7 @@ global $page_title;
 				        </div>
 				    </div>
 				</div>
+				<div class="video-overlay"></div>
 				<div class="home-title"><?php dynamic_sidebar( 'home-title-sidebar' ); ?></div>
 				<div class="sermon-player-wrapper">
 					<div class="sermon-player">
