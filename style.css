@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.78
+Version: 1.0.79
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -529,6 +529,7 @@ table {
     text-align: left;
     background-color: rgba(255,255,255,0.4);
     padding: 0px 35px;
+    font-weight: lighter;
 }
 .video-container video {
     position: absolute;
@@ -894,9 +895,9 @@ a:active {
 	margin-top: 2px;
 }
 #search-menu-item-form{
-	right: 30px;
+	right: 75px;
     position: absolute;
-    margin-top: -5px;
+    margin-top: -40px;
     display: none;
 }
 #search-menu-item-form .search-field{
@@ -958,6 +959,26 @@ a:active {
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.widget_text .social-icon{
 	display: inline-block;
+}
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link{
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.searching #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {
+	color: transparent;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.mobile .searching #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {
+	color: inherit;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 .mega-toggle-block{
 	line-height: 2.5em;
@@ -1072,9 +1093,23 @@ a:active {
 .main-navigation.toggled #search-menu-item{
 	display: none;
 }
+.mobile #search-menu-item{
+	display: block;
+	text-align: left;
+	line-height: 3.5em;
+}
+.mobile #search-menu-item a {
+	padding: 0px 10px;
+    margin: 0px;
+}
 .main-navigation.toggled #search-menu-item-form{
 	position: initial;
 	display: block !important;
+}
+.mobile #search-menu-item-form{
+	left: 50px;
+    right: initial;
+    bottom: 12px;
 }
 .main-navigation.toggled #search-menu-item-form .search-field{
 	background-color: #ffffff;
@@ -1552,7 +1587,7 @@ object {
 	width: 30%;
 	display: table-cell;
 	vertical-align: top;
-	padding: calc(30px + 1.5em) 10px 30px;
+	padding: calc(30px + 1.5em) 30px 30px;
 }
 .sidebar .widget .search-field{
 	width:calc(100% - 90px);
@@ -1564,7 +1599,7 @@ object {
 }
 .sermon-player-wrapper{
     position: relative;
-    bottom: 70px;
+    bottom: 72px;
     color: #fff;
     font-weight: lighter;
     padding: 5px 20px;
@@ -1585,7 +1620,7 @@ object {
 }
 .sermon-player-latest{
 	display: inline-block;
-    width: 150px;
+    width: 151px;
     border-right: 1px solid #a0a0a0;
     padding: 11px 10px;
     height: 100%;

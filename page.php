@@ -29,7 +29,7 @@ get_header(); ?>
 
 			endwhile; // End of the loop.
 
-			if ( !is_front_page() && !tribe_is_month()) : ?>
+			if ( !is_front_page() && !tribe_is_month() && !get_post_meta( $post->ID, 'hide_page_sidebar', true )) : ?>
 			<div class="sidebar">
 				<?php dynamic_sidebar( 'pages-sidebar' ); ?>
 			</div>
