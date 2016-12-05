@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.81
+Version: 1.0.82
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -2221,5 +2221,115 @@ a.anchor {
 		display: block;
 		text-align: center;
 		max-width: 100%;
+	}
+}
+
+/*--------------------------------------------------------------
+## Calendar Duplication
+--------------------------------------------------------------*/
+.tribe-mini-calendar-event .list-date{
+	display: none;
+}
+.tribe-mini-calendar-event .list-info{
+	margin: 0px;
+}
+.type-tribe_events {
+    padding: 0px 10px;
+}
+.tribe-this-week-event {
+	border: 0px !important;
+}
+.tribe-this-week-events-widget .tribe-events-page-title{
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    color: #fff;
+    font-size: 20px !important;
+    width: calc(100% - 55px);
+    margin: 0px;
+	font-weight: lighter;
+	text-transform: uppercase;
+}
+.events-archive h2.tribe-events-page-title {
+	font-size: 2em;
+}
+.events-archive #tribe-bar-form input[type=text]{
+	border-bottom-style: solid;
+}
+.events-archive .site-header .poster.page{
+	height: 90px;
+}
+.tribe-this-week-event .duration{
+	display: inline-block;
+    width: 120px;
+}
+.tribe-this-week-event .entry-title{
+	display: inline-block;
+	font-weight: bold;
+	margin-left: 15px !important;
+	text-transform: initial;
+}
+.tribe-this-week-widget-day{
+	cursor: pointer;
+}
+.tribe-this-week-widget-day-wrap{
+	display: none;
+	position: absolute;
+	left: 0px;
+}
+.tribe-this-week-widget-day.this-week-today .tribe-this-week-widget-day-wrap{
+	display: initial;
+}
+.tribe-this-week-widget-day .date{
+    font-size: 40px;
+    font-weight: lighter;
+}
+.tribe-this-week-widget-day .day{
+	font-weight: lighter;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.tribe-this-week-widget-day .tribe-this-week-widget-header-date{
+	background-color: #ffffff;
+	border-bottom: 1px solid #e6e6e6;
+    color: #b9b9b9;
+}
+.tribe-this-week-widget-day.this-week-today .tribe-this-week-widget-header-date{
+	background-color: #f8f5ec;
+	color: #144c5b;
+}
+.home .entry-content ul.tribe-events-sub-nav,.home .tribe-events-sub-nav{
+	background-color: #144c5b;
+	margin: 0px !important;
+}
+.tribe-this-week-nav-link a, .tribe-this-week-nav-link a:visited{
+	color: #ffffff;
+}
+.tribe-event-start-date, .tribe-event-end-date{
+	text-transform: uppercase;
+    text-align: right;
+    width: 46%;
+    display: inline-block;
+}
+.tribe-event-start-date{
+	text-align: left;
+}
+
+.widget.tribe-events-adv-list-widget .type-tribe_events{
+	text-align: left;
+}
+@media only screen and (max-width: 767px) {
+	.tribe-this-week-widget-horizontal .tribe-this-week-widget-day, .tribe-this-week-widget-horizontal .tribe-this-week-widget-hide-weekends .tribe-this-week-widget-day {
+    	width: 14.28% !important; 
+    }
+    .tribe-this-week-widget-day .date{
+ 	   font-size: 25px;
+	}
+	.tribe-this-week-widget-day .day{
+	    font-size: 6px;
+	}
+	.tribe-this-week-events-widget .tribe-events-page-title{
+		font-size: 14px !important;
+		top: 8px;
 	}
 }
