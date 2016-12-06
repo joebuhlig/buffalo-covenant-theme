@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.0.85
+Version: 1.0.86
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -2174,7 +2174,7 @@ a.anchor {
 }
 
 .wpcf7-checkbox input[type="checkbox"]{
-	max-width: initial;
+	width: auto;
 }
 
 @media screen and (max-width: 760px){
