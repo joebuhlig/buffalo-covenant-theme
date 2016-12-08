@@ -88,13 +88,23 @@ $( document ).ready(function() {
         $tileDescription = $tile.find(".page-tile-text");
         $(this).toggleClass("rotated");
         $tileDescription.slideToggle(200);
-    })
+    });
+
+    $(".staff-member").click(function(e){
+        e.stopPropagation();
+        $bio = $(this).find(".staff-member-bio");
+        minHeight = $bio.css('min-height');
+        $bio.css('min-height',0).slideToggle(200, function(){
+            $bio.css('min-height', minHeight);
+        });
+    });
 
     $(window).click(function(){
         $(".main-navigation.searching #search-menu-item-form").fadeOut(200);
         $(".main-navigation .menu-main-menu-container a").fadeIn(200);
         $(".main-navigation").removeClass("searching");
         $("#site-navigation").removeClass("toggled");
+        $(".staff-member-bio").slideUp(200);
     });
 
     setWeekCalClickEvent();

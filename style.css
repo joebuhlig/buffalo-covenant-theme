@@ -1989,7 +1989,6 @@ object {
     vertical-align: top;
     position: relative;
 }
-
 .staff-member-pic{
 	position: relative;
 	width: 100%;
@@ -1999,10 +1998,11 @@ object {
 	vertical-align: top;
 }
 .staff-member-info{
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    bottom: 45px;
+    margin-bottom: -45px;
     padding-bottom: 5px;
-    width: calc(100% - 4px);
+    width: 100%;
     text-align: center;
     color: #ffffff;
     font-weight: lighter;
@@ -2022,6 +2022,17 @@ object {
 .staff-member-title{
 	text-align: center;
 	font-size: 0.8em;
+}
+.staff-member-bio{
+	position: absolute;
+    z-index: 9;
+    padding: 10px;
+    background-color: #ffffff;
+    display: none;
+    min-height: 260px;
+}
+.staff-member-bio p{
+	font-size: 14px;
 }
 .tml{
     margin: 0px auto;
