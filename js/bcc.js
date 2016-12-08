@@ -99,6 +99,10 @@ $( document ).ready(function() {
         });
     });
 
+    $('select[multiple]').each(function() { 
+        $(this).attr('size', $(this).find('option').length);
+    });
+
     $(window).click(function(){
         $(".main-navigation.searching #search-menu-item-form").fadeOut(200);
         $(".main-navigation .menu-main-menu-container a").fadeIn(200);
