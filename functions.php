@@ -130,7 +130,7 @@ add_action( 'widgets_init', 'buffalo_covenant_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function buffalo_covenant_theme_scripts() {
-	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.90' );
+	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.91' );
 
 	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '20161208', true);
 
@@ -502,14 +502,16 @@ add_shortcode( 'staff', 'staff_members_func' );
 function tile_func( $atts ){
     $a = shortcode_atts( array(
         'image' => '',
-        'title' => 'Blank',
+        'title' => '',
         'link' => '/'
     ), $atts );
     $result = "";
 	$result .= '<div class="page-tile">';
     $result .= '<a href="'  . $a['link'] . '" >';
 	$result .= '<img class="grayscale" src="' . $a['image'] . '" >';
-	$result .= '<div class="page-tile-title">' . $a['title'] . '</div>';
+	if ($a['title'] !== "") {
+		$result .= '<div class="page-tile-title">' . $a['title'] . '</div>';
+	}
 	$result .= '</a>';
 	$result .= '</div>';
 	return $result;
