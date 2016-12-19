@@ -98,13 +98,11 @@ global $page_title;
 				</div>
 			<?php else : ?>
 				<div class="poster page">
-					<?php if (($show_default_header || !has_post_thumbnail()) && !wp_is_mobile()) : ?>
-						<img src="<?php echo get_theme_mod('default_page_header') ?>" alt="">
-					<?php elseif (wp_is_mobile() && get_post_meta( $post->ID, 'mobile_header', true)) : ?>
-						<img class="mobile-header" src="<?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?>" alt="">
-					<?php else :
-						echo get_the_post_thumbnail();
-			        endif; ?>
+					<?php if ($show_default_header || !has_post_thumbnail()) : ?>
+						<img id="header-img" desktop-src="<?php echo get_theme_mod('default_page_header') ?>" mobile-src="<?php if (get_post_meta( $post->ID, 'mobile_header', true)) : ?><?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?><? endif; ?>" alt="">
+					<?php else : ?>
+						<img id="header-img" desktop-src="<?php echo the_post_thumbnail_url() ?>" mobile-src="<?php if (get_post_meta( $post->ID, 'mobile_header', true)) : ?><?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?><? endif; ?>" alt="">
+			        <? endif; ?>
 			        <header class="entry-header">
 			        <?php if (!$hide_page_title && !get_post_meta( $post->ID, 'hide_page_title', true )) : ?>
 			        	<?php if ($page_title) : ?>
