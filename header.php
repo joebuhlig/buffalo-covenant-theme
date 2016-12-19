@@ -101,7 +101,7 @@ global $page_title;
 					<?php if (($show_default_header || !has_post_thumbnail()) && !wp_is_mobile()) : ?>
 						<img src="<?php echo get_theme_mod('default_page_header') ?>" alt="">
 					<?php elseif (wp_is_mobile() && get_post_meta( $post->ID, 'mobile_header', true)) : ?>
-						<img src="<?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?>" alt="">
+						<img class="mobile-header" src="<?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?>" alt="">
 					<?php else :
 						echo get_the_post_thumbnail();
 			        endif; ?>
