@@ -8,10 +8,10 @@ $("#site-navigation button").click(function(e){
 console.log(navigator.userAgent);
 if (navigator.userAgent.match(/Mobile|webOS|Nexus 7/)){
     $(".video-container video").remove();
-    $("body").addClass("mobile");
     $(".video-container .poster").removeClass("hidden");
 };
-if (navigator.userAgent.match(/Mobile|webOS|Nexus 7/) && !navigator.userAgent.match(/iPad/i)){
+if (navigator.userAgent.match(/Mobile|webOS|Nexus 7/) && !navigator.userAgent.match(/Tablet|iPad/i)){
+    $("body").addClass("mobile");
     $("#header-img").attr("src", $("#header-img").attr("mobile-src"));
 }
 else{
