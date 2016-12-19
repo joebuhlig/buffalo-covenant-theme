@@ -5,12 +5,14 @@ $("#site-navigation button").click(function(e){
     $("#site-navigation").toggleClass("toggled");
     e.stopPropagation();
 })
-
+console.log(navigator.userAgent);
 if (navigator.userAgent.match(/Mobile|webOS|Nexus 7/)){
-    $("#header-img").attr("src", $("#header-img").attr("mobile-src"));
     $(".video-container video").remove();
     $("body").addClass("mobile");
     $(".video-container .poster").removeClass("hidden");
+};
+if (navigator.userAgent.match(/Mobile|webOS|Nexus 7/) && !navigator.userAgent.match(/iPad/i)){
+    $("#header-img").attr("src", $("#header-img").attr("mobile-src"));
 }
 else{
     $("#header-img").attr("src", $("#header-img").attr("desktop-src"));
