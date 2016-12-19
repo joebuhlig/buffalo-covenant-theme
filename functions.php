@@ -130,9 +130,9 @@ add_action( 'widgets_init', 'buffalo_covenant_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function buffalo_covenant_theme_scripts() {
-	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.102' );
+	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.0.103' );
 
-	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '201612192', true);
+	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '201612193', true);
 
 	wp_enqueue_script( 'buffalo-covenant-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
