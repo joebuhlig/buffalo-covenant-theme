@@ -99,9 +99,9 @@ global $page_title;
 			<?php else : ?>
 				<div class="poster page">
 					<?php if ($show_default_header || !has_post_thumbnail()) : ?>
-						<img id="header-img" desktop-src="<?php echo get_theme_mod('default_page_header') ?>" mobile-src="<?php if (get_post_meta( $post->ID, 'mobile_header', true)) : ?><?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?><? endif; ?>" alt="">
+						<img id="header-img" desktop-src="<?php echo get_theme_mod('default_page_header') ?>" mobile-src="<?php if (get_post_meta( $post->ID, 'mobile_header', true)) : ?><?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?><? else : ?><?php echo get_theme_mod('default_page_header') ?><? endif; ?>" alt="">
 					<?php else : ?>
-						<img id="header-img" desktop-src="<?php echo the_post_thumbnail_url() ?>" mobile-src="<?php if (get_post_meta( $post->ID, 'mobile_header', true)) : ?><?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?><? endif; ?>" alt="">
+						<img id="header-img" desktop-src="<?php echo the_post_thumbnail_url() ?>" mobile-src="<?php if (get_post_meta( $post->ID, 'mobile_header', true)) : ?><?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?><? else : ?><?php echo the_post_thumbnail_url() ?><? endif; ?>" alt="">
 			        <? endif; ?>
 			        <header class="entry-header">
 			        <?php if (!$hide_page_title && !get_post_meta( $post->ID, 'hide_page_title', true )) : ?>
