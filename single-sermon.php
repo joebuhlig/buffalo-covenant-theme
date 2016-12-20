@@ -33,8 +33,9 @@ if ($series) {
 	        )
 	    )
 	);
-	$thumb_src = $posts_array[0]->guid;
+	$thumb_src = wp_get_attachment_url($posts_array[0]->ID);
 };
+
 $show_default_header = true;
 $hide_page_title = true;
 get_header(); ?>

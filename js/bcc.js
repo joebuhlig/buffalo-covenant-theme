@@ -5,7 +5,7 @@ $("#site-navigation button").click(function(e){
     $("#site-navigation").toggleClass("toggled");
     e.stopPropagation();
 })
-console.log(navigator.userAgent);
+
 if (navigator.userAgent.match(/Mobile|webOS|Nexus 7/)){
     $(".video-container video").remove();
     $(".video-container .poster").removeClass("hidden");

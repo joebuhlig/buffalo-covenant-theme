@@ -52,7 +52,7 @@ get_header(); ?>
 				        )
 				    )
 				);
-				$series[$index]['thumb_src'] = $posts_array[0]->guid;
+				$series[$index]['thumb_src'] = wp_get_attachment_url($posts_array[0]->ID);
 				
 				$posts_array = get_posts(
 				    array(
