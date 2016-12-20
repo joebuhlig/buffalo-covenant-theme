@@ -16,7 +16,7 @@
 			        )
 			    )
 			);
-			$thumb_src = $posts_array[0]->guid;
+			$thumb_src = wp_get_attachment_url($posts_array[0]->ID);
 		};?>
 	<div class="sermon-thumbnail">
 		<a href="<?php echo esc_url( get_permalink() ) ?>">
