@@ -130,7 +130,7 @@ add_action( 'widgets_init', 'buffalo_covenant_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function buffalo_covenant_theme_scripts() {
-	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.1' );
+	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.1.1' );
 
 	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '201612193', true);
 
@@ -261,6 +261,7 @@ function get_latest_sermon(){
     ) );
 	$speaker = get_the_terms( $sermons->posts[0], 'speakers');
 	$series = get_the_terms( $sermons->posts[0], 'series');
+	$thumb_src = get_the_post_thumbnail_url($sermons->posts[0]);
 	if ($series){
 		$posts_array = get_posts(
 		    array(
@@ -275,8 +276,12 @@ function get_latest_sermon(){
 		        )
 		    )
 		);
-		$thumb_src = wp_get_attachment_url($posts_array[0]->ID);
-		$sermon['thumb_src'] = $thumb_src;
+		if (!$thumb_src) {
+			$thumb_src = wp_get_attachment_url($posts_array[0]->ID);
+		};
+	};
+	if (!$thumb_src) {
+		$thumb_src = get_theme_mod('default_sermon_logo');
 	};
     $title = $sermons->posts[0]->post_title;
 	$date = date("F j" , strtotime($sermons->posts[0]->post_date));
@@ -285,6 +290,7 @@ function get_latest_sermon(){
 	$sermon['date'] = $date;
 	$sermon['link'] = $link;
 	$sermon['post_name'] = $sermons->posts[0]->post_name;
+	$sermon['thumb_src'] = $thumb_src;
 	if ($speaker){
 		$sermon['speaker'] = $speaker[0]->name;
 	}
