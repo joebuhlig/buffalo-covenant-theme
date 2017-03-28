@@ -67,6 +67,11 @@ get_header(); ?>
 						<div class="sermon-medium-toggle"><button>Audio Only?</button></div>
 					<?php endif;?>
 				</div><?php
+				while ( have_posts() ) : the_post(); ?>
+					<div class="serman-content">
+						<?php the_content(); ?>
+					</div>
+					<?php endwhile;
 				if ($vimeo_id && $podcast) : ?>
 					<div class="sermon-player show-video">
 				<?php elseif ($vimeo_id && !$podcast) : ?>
