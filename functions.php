@@ -130,9 +130,9 @@ add_action( 'widgets_init', 'buffalo_covenant_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function buffalo_covenant_theme_scripts() {
-	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.1.1' );
+	wp_enqueue_style( 'buffalo-covenant-theme-style', get_stylesheet_uri(), '', '1.1.2' );
 
-	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '201612193', true);
+	wp_enqueue_script( 'buffalo-covenant-theme-base', get_template_directory_uri() . '/js/bcc.js', array( 'jquery' ), '20170328', true);
 
 	wp_enqueue_script( 'buffalo-covenant-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -546,5 +546,19 @@ function custom_tribe_events_this_week_next_link( $start_date, $text = '' ) {
 
 	return sprintf( '<a %s href="#" rel="next">%s</a>', $attributes, $text );
 
+}
+
+add_action( 'pre_get_posts', 'cliff_tribe_custom_time_range_ics_export' );
+function cliff_tribe_custom_time_range_ics_export( WP_Query $query ) {
+  if ( ! isset( $_GET['ical'] )) {
+    return;
+  }
+  if ( ! isset( $query->tribe_is_event_query ) || ! $query->tribe_is_event_query ) {
+    return;
+  }
+  $query->set( 'eventDisplay',  'custom' );
+  $query->set( 'start_date',    'now' );
+  $query->set( 'end_date',      '+ 365 days' ); // http://php.net/manual/en/datetime.formats.relative.php
+  $query->set( 'posts_per_page', -1 );
 }
 ?>
