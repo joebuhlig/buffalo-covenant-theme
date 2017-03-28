@@ -285,7 +285,7 @@ function get_latest_sermon(){
 	};
     $title = $sermons->posts[0]->post_title;
 	$date = date("F j" , strtotime($sermons->posts[0]->post_date));
-	$link = "/sermons/" . $sermons->posts[0]->post_name . "?autoplay=true";
+	$link = "/media/" . $sermons->posts[0]->post_name . "?autoplay=true";
 	$sermon['title'] = $title;
 	$sermon['date'] = $date;
 	$sermon['link'] = $link;
