@@ -285,7 +285,7 @@ function get_latest_sermon(){
 	};
     $title = $sermons->posts[0]->post_title;
 	$date = date("F j" , strtotime($sermons->posts[0]->post_date));
-	$link = "/media/" . $sermons->posts[0]->post_name . "?autoplay=true";
+	$link = "/media/" . $sermons->posts[0]->post_name;
 	$sermon['title'] = $title;
 	$sermon['date'] = $date;
 	$sermon['link'] = $link;
@@ -557,7 +557,7 @@ function cliff_tribe_custom_time_range_ics_export( WP_Query $query ) {
     return;
   }
   $query->set( 'eventDisplay',  'custom' );
-  $query->set( 'start_date',    'now' );
+  $query->set( 'start_date',    '- 60 days' );
   $query->set( 'end_date',      '+ 365 days' ); // http://php.net/manual/en/datetime.formats.relative.php
   $query->set( 'posts_per_page', -1 );
 }
