@@ -97,6 +97,7 @@ global $page_title;
 					</div>
 				</div>
 			<?php else : ?>
+				<?php if (!get_post_meta( $post->ID, 'hide_page_header_image', true )) : ?>
 				<div class="poster page">
 					<?php if ($show_default_header || !has_post_thumbnail()) : ?>
 						<img id="header-img" desktop-src="<?php echo get_theme_mod('default_page_header') ?>" mobile-src="<?php if (get_post_meta( $post->ID, 'mobile_header', true)) : ?><?php echo esc_attr( get_post_meta( $post->ID, 'mobile_header', true) ) ?><? else : ?><?php echo get_theme_mod('default_page_header') ?><? endif; ?>" alt="">
@@ -115,6 +116,7 @@ global $page_title;
 		        </div>
 			<?php
 			endif;
+			endif;
 			?>
 		</div><!-- .site-branding -->
 
@@ -126,5 +128,8 @@ global $page_title;
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
+	<?php if (get_post_meta( $post->ID, 'hide_page_header_image', true )) : ?>
+	<div id="content" class="site-content header-hidden">
+	<?php else : ?>
 	<div id="content" class="site-content">
+	<? endif; ?>
