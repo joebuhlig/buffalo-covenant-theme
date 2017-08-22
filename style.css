@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/joebuhlig/buffalo-covenant-theme
 Author: Joe Buhlig
 Author URI: http://joebuhlig.com
 Description: Description
-Version: 1.1.5
+Version: 1.1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: buffalo-covenant-theme
@@ -2352,6 +2352,27 @@ a.anchor {
 
 .widget.tribe-events-adv-list-widget .type-tribe_events{
 	text-align: left;
+}
+.single-tribe_events .tribe-events-schedule .recurringinfo{
+  display: none;
+}
+.single-tribe_events .tribe-events-single-event-title{
+  font-weight: bold;
+}
+.single-tribe_events .tribe-events-schedule h2{
+  font-weight: normal;
+  font-size: 22px;
+  margin: 10px 0px;
+  color: #4d4d4d;
+}
+.single-tribe_events .site-content{
+  margin-top: 50px;
+}
+.single-tribe_events .poster.page{
+  display: none;
+}
+.single-tribe_events .tribe-events-schedule{
+  margin: 0px;
 }
 @media only screen and (max-width: 767px) {
 	.tribe-this-week-widget-horizontal .tribe-this-week-widget-day, .tribe-this-week-widget-horizontal .tribe-this-week-widget-hide-weekends .tribe-this-week-widget-day {
